@@ -15,7 +15,7 @@ BANNED = [  # (label, regex, apply_to_code)
     ("facilitator", r"(?i)\bfacilitator"),
     ("I Do / We Do / You Do", r"\b(I|We|You) Do\b"),
     ("Recap", r"(?i)\brecap\b"),
-    ("Break", r"\bBreak\b"),
+    ("Break", r"\bBreak\b(?!\s+(an\s+analysis|down\b))"),
     ("Time plan", r"(?i)\btime plan\b"),
     ("[Script:]", r"\[Script:"),
     ("Spine", r"(?i)\bspine\b"),

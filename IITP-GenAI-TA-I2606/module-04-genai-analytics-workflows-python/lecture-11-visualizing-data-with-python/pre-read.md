@@ -1,195 +1,118 @@
-# Visualizing Data with Python
-> Pre-Read — Academic Session 36 | Module 4: GenAI for Analytics Workflows + Basic Python
----
+## <span style="color:#2F7DDE">Visualizing Data with Python</span>
 
-## Mental Map
-
-<div style="overflow-x: scroll; max-width: 100%; display: block;">
+### <span style="color:#2F7DDE">Mental Map</span>
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '16px'}, 'flowchart': {'useMaxWidth': false, 'htmlLabels': true, 'nodeSpacing': 80, 'rankSpacing': 120, 'wrappingWidth': 620, 'padding': 20}}}%%
-flowchart LR
+%%{init: {'flowchart': {'nodeSpacing': 45, 'rankSpacing': 55, 'padding': 20}}}%%
+flowchart TB
+  CUR["<b>Current Session</b><br/>Visualizing Data with Python"]
+  Q["<b>The Big Question</b><br/><i>How do analysts turn walls of tabular numbers into instant visual insights?</i>"]
+  CV["<b>Course use case</b><br/>Visualize 120 hourly dark store delivery logs to pinpoint operational bottlenecks"]
+  RL["<b>Real-world example</b><br/>Morning rush delivery dispatching for quick-commerce apps in Bengaluru"]
 
-START["<b>Course Start</b>"]
+  CUR ==> Q
+  Q ==>|&nbsp;Used in the course&nbsp;| CV
+  Q ==>|&nbsp;Seen in real life&nbsp;| RL
 
-subgraph foundation[" WHERE WE ARE "]
-direction LR
-    CURMOD["<b>CURRENT MODULE</b><br/><i>Module 4: GenAI for Analytics Workflows + Basic Python</i><br/>&nbsp;<br/><b>Covered so far:</b> Python for APIs and GenAI Integration · Getting Started with Python Data · Cleaning Data with Pandas<br/>plus 7 earlier Module 4 sessions<br/>This is Session 36 of 41"]
-    CURSES["<b>CURRENT SESSION</b><br/><b>Visualizing Data with Python</b><br/>&nbsp;<br/><i>The shift:</i> from <i>tables of numbers</i> to <b>charts: choosing line, bar or scatter by the question, and labelling them so they can be read on their own</b><br/>&nbsp;<br/>Line, bar and scatter plots with matplotlib · Titles, labels and colours<br/>Plotting directly from pandas DataFrames<br/>Python-based visualization vs Tableau"]
-end
+  classDef currSes fill:#ef6c00,stroke:#e65100,color:#ffffff,stroke-width:3px
+  classDef ask fill:#1565c0,stroke:#0d47a1,color:#ffffff,stroke-width:3px
+  classDef val fill:#2e7d32,stroke:#1b5e20,color:#ffffff,stroke-width:3px
 
-subgraph outcome[" OUTCOME OF THIS SESSION "]
-direction LR
-    OUT["<b>By the end, you can…</b><br/>&nbsp;<br/>Draw a clear chart of Kirana365 city performance from a cleaned table,<br/>and say when Python or Tableau is the better tool for the job"]
-end
+  class CUR currSes
+  class Q ask
+  class CV,RL val
 
-subgraph value[" WHY IT MATTERS "]
-direction LR
-    CVAL["<b>Course Value</b><br/>Charts are how the final insights in the end-to-end workflow and the distributions session are shown"]
-    RVAL["<b>Real-Life Value</b><br/>Turning a table into a chart a manager understands in seconds, and rerunning it every month"]
-end
-
-subgraph future[" WHAT COMES NEXT "]
-direction LR
-    U0["<b>Next Session</b><br/>Connecting the Tools<br/><i>Now we link spreadsheets, SQL, Tableau and Python into one workflow</i>"]
-    U1["<b>Later in Module 4</b><br/>End-to-End Analytics Workflow<br/>Statistics: Distributions; Insights and Drawing Conclusions"]
-    U2["<b>Upcoming</b><br/>Capstone Project<br/><i>Clear, honest charts are part of presenting the capstone</i>"]
-end
-
-START ==>|" begin "| CURMOD
-CURMOD ==>|" progress "| CURSES
-CURSES ==>|" you get "| OUT
-OUT ==>|" course "| CVAL
-OUT ==>|" real life "| RVAL
-CURSES ==>|" next up "| U0
-U0 -.->|" then "| U1
-U1 -.->|" ahead "| U2
-
-classDef startBox fill:#F7FAFC,stroke:#4A5568,stroke-width:2px,color:#1A202C
-classDef curModBox fill:#FFF8E6,stroke:#B7791F,stroke-width:2px,color:#1A202C
-classDef curSessBox fill:#E6FFFA,stroke:#0D9488,stroke-width:3px,color:#1A202C
-classDef outBox fill:#FEF2F2,stroke:#DC2626,stroke-width:3px,color:#1A202C
-classDef valueBox fill:#F3E8FF,stroke:#7C3AED,stroke-width:2px,color:#1A202C
-classDef futureBox fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#1A202C
-
-class START startBox
-class CURMOD curModBox
-class CURSES curSessBox
-class OUT outBox
-class CVAL,RVAL valueBox
-class U0,U1,U2 futureBox
-
-linkStyle default stroke-width:2px
+  linkStyle default stroke-width:3px
 ```
 
-</div>
+---
 
-## What You'll Learn
-In this pre-read, you'll discover:
-- How to choose a line, bar or scatter chart from the question you are asking
-- How to draw each one with matplotlib
-- How to add titles, axis labels and colours so the chart explains itself
-- When Python is the better tool and when Tableau is
+### <span style="color:#2F7DDE">What You'll Learn</span>
 
-## A. Line, Bar and Scatter Plots with matplotlib
+Have you ever stared at a spreadsheet filled with hundreds of rows of numbers and found your eyes glazing over, unable to tell if sales are growing or falling?
 
-**💡 Analogy**: Think of choosing a vehicle: a bicycle for a short ride, a train for a long journey. Each chart type suits a type of question.
+By the end of this session, you will be able to:
 
-**Use a line for change over time, a bar to compare categories, and a scatter for the relationship between two numbers.**
+- <span style="color:#D9660B">**Create**</span> line plots, bar charts, and scatter plots using matplotlib functions.
+- <span style="color:#D9660B">**Customize**</span> charts with action titles, clear units (₹ and minutes), and accessible colors.
+- <span style="color:#D9660B">**Generate**</span> visual plots directly from pandas DataFrame columns in a single line.
+- <span style="color:#D9660B">**Compare**</span> automated Python charting scripts with interactive Tableau dashboards.
 
-**Worked example**:
+> <span style="color:#2F7DDE">**Topics you will meet:**</span> Matplotlib plot types; Line plots for hourly trends; Bar charts for category revenue; Scatter plots for correlation; Titles, labels, and color palettes; Direct pandas plotting; Python versus Tableau use cases.
+>
+> Join the session to learn each of these in detail.
 
-```python
-import matplotlib.pyplot as plt
+---
 
-# Bar: compare regions
-regions = ["North", "South", "West"]
-sales = [41, 55, 31]
-plt.bar(regions, sales)
-plt.show()
+### <span style="color:#2F7DDE">Why You Are Learning This Topic</span>
 
-# Line: sales over six months
-plt.plot([1, 2, 3, 4, 5, 6], [20, 26, 31, 38, 41, 55])
-plt.show()
+A quick-commerce grocery dark store in Indiranagar processes 150 orders every morning.
 
-# Scatter: ad spend vs sales (the 12.1 data)
-plt.scatter([2, 3, 4, 5, 6, 8], [20, 26, 31, 38, 41, 55])
-plt.show()
-```
+At 8:30 AM, road traffic delays riders, pushing delivery times from 15 minutes to 38 minutes.
 
-| Question | Chart |
-|---|---|
-| How did sales change month to month? | Line |
-| Which region sold the most? | Bar |
-| Do ad spend and sales move together? | Scatter |
+Customer satisfaction ratings plummet from 4.8 down to 3.2.
 
-**⚠️ Common trap**: Picking a chart because it looks nice. Start from the question, then choose the chart that answers it.
+If this data remains trapped in a 500-row spreadsheet, store managers miss the bottleneck until angry customer complaints flood customer support.
 
-## B. Titles, Labels and Colours
+A <span style="color:#D9660B">**chart**</span> means a visual display that translates raw numbers into lines, bars, or coordinates so human brains can spot trends, spikes, and outliers in seconds.
 
-**💡 Analogy**: Think of a road sign. A sign with no words is useless. A chart with no title, axis names or units is the same.
+Learning to build clear charts in Python lets you automate visual daily reports and alert leadership to operational issues before revenue is lost.
 
-**Every chart should say what it shows, what each axis means, and in what unit.**
+> <span style="color:#2F7DDE">**Think about it:**</span> Why does a simple line spiking upward communicate an emergency faster than a table of 24 numbers?
 
-**Worked example**:
+---
 
-```python
-plt.bar(regions, sales, color="steelblue")
-plt.title("Sales by region, last month")
-plt.xlabel("Region")
-plt.ylabel("Sales (₹ lakh)")
-plt.show()
-```
+### <span style="color:#2F7DDE">The Dark Store Delivery Puzzle</span>
 
-Use one colour to show something and a second colour only to highlight (for example West in orange). More colours than meanings becomes noise.
+An operations log records hourly performance across four dark store locations in Bengaluru.
 
-**⚠️ Common trap**: Starting the y-axis above zero on a bar chart. A small gap can look huge. Bars should start at zero so their lengths are honest.
+| Hub Area | Hour | Orders Completed | Avg Delivery (mins) | Customer Rating |
+|:---------|:----:|:----------------:|:-------------------:|:---------------:|
+| Indiranagar | 9 AM | 152 | 35 | 3.2 |
+| Koramangala | 9 AM | 140 | 22 | 4.6 |
+| Whitefield | 9 AM | 95 | 20 | 4.7 |
+| HSR Layout | 9 AM | 110 | 23 | 4.5 |
 
-## C. Plotting Directly from pandas
+<span style="color:#D9660B">**What you want to happen:**</span>
 
-**💡 Analogy**: Think of a printer attached to your computer. The table is already there, so you just press print instead of copying data across by hand.
+- Draw a line chart showing order peaks across all 24 hours of the day.
+- Create a scatter plot to confirm that delivery times over 25 minutes drag ratings below 4.0.
+- Decide whether to automate daily alert charts in Python or build interactive Tableau dashboards for store leads.
 
-**A DataFrame has its own `.plot()` method, so a cleaned table becomes a chart in one line.**
-
-**Worked example**:
+Here is how it might start. You do not need to understand it yet.
 
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
 
-df = pd.DataFrame({
-    "region": ["North", "South", "West"],
-    "ad_spend": [6, 8, 4],
-    "sales": [41, 55, 31],
-})
-df.plot(x="region", y="sales", kind="bar", title="Sales by region")
-df.plot(x="ad_spend", y="sales", kind="scatter")
-plt.show()
+df = pd.read_csv("data/bengaluru_darkstore_metrics.csv")
+df.groupby("area")["revenue_inr"].sum().plot(kind="bar")
 ```
 
-This fits straight onto the cleaning steps from 16.1: clean, then plot.
+> <span style="color:#D9660B">**Wonder about this:**</span>
+>
+> - Why do we use line charts for hours of the day but bar charts for city areas?
+> - When would you choose a Python script over a Tableau dashboard to present sales numbers?
 
-**⚠️ Common trap**: Plotting the messy file. A chart built on duplicates and spelling variants looks professional but shows wrong totals.
+---
 
-## D. Python-Based Visualization vs Tableau
+### <span style="color:#2F7DDE">Think It Through</span>
 
-**💡 Analogy**: Think of a home kitchen and a restaurant counter. At home you cook exactly what you want, in your own way (Python). A counter serves many people quickly from a ready menu (Tableau).
+There is no wrong first try. Keep your guesses for the session.
 
-**Python suits repeatable, scripted charts that sit inside a workflow; Tableau suits interactive dashboards that other people explore.**
+**1. If you want to show how a company's sales change continuously month by month over a full year, which chart type should you choose?**
+Hint: Think about connecting sequential points across time.
 
-**Worked example**:
+**2. Why should an axis label never just say "Revenue" without specifying units like "₹ in Thousands"?**
+Hint: A number like 500 could mean 500 rupees, 500 thousand, or 500 crore.
 
-| Need | Better tool |
-|---|---|
-| A chart regenerated automatically every Monday inside a script | Python |
-| A dashboard where a manager filters by city themselves | Tableau |
-| Quick one-off exploration while cleaning data | Python |
-| Sharing a polished, interactive view with many stakeholders | Tableau |
+**3. If an executive wants to click on a map and filter sales by individual pincodes live during a meeting, is Python or Tableau better?**
+Hint: Consider which tool is designed for interactive, no-code click-and-drag exploration.
 
-Many teams use both: Python to prepare and check the data, Tableau to present it.
+---
 
-**⚠️ Common trap**: Treating it as a contest. The honest question is "who will use this chart and how often?" not "which tool is better?"
+### <span style="color:#2F7DDE">One Question to Carry Into the Session</span>
 
-## Quick Reference — Choosing and Drawing a Chart
-
-| Your situation | Use this | Because |
-|---|---|---|
-| Change over time | Line (`plt.plot`) | Shows the trend |
-| Compare categories | Bar (`plt.bar`) | Lengths compare easily |
-| Relationship between two numbers | Scatter (`plt.scatter`) | Shows how points cluster |
-| Chart will be read without you | Title, axis labels, units | It must explain itself |
-| Data is already a DataFrame | `df.plot(kind=...)` | Fewer lines, same chart |
-
-## Practice Exercises
-
-1. **Pattern Recognition**: Which chart type would you choose for "how did Pune's orders change over six months?" and why?
-
-2. **Concept Detective**: What three things should every chart have so it can be read on its own?
-
-3. **Real-Life Application**: Write the line that draws a scatter of ad spend against sales from a DataFrame `df`.
-
-4. **Spot the Error**: Spot the error: a bar chart whose y-axis starts at 50 makes North (41 vs 55) look tiny. What should you check?
-
-5. **Planning Ahead**: Next session we connect Python with SQL, spreadsheets and Tableau. For a monthly leadership dashboard, which parts would you do in Python and which in Tableau?
-
-> ✅ **You're done!** You can now draw a clear line, bar or scatter chart from a cleaned table, label it properly, and say when Python or Tableau fits better.
-Next session, we link all the tools together in **Connecting the Tools**.
+> <span style="color:#2F7DDE">**How can a single visual chart change an executive's operational decisions in three seconds when a 100-row table failed to do so?**</span>
+>
+> What makes a data visual trustworthy rather than misleading?

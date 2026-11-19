@@ -1,0 +1,121 @@
+task_id,workflow_stage,department,input_type,output_type,manual_time_mins,genai_time_mins,time_saved_mins,error_rate_pct,human_in_loop_required
+TSK-4001,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,57,10,47,3.5,False
+TSK-4002,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,60,15,45,6.1,True
+TSK-4003,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,85,23,62,2.5,False
+TSK-4004,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,80,7,73,1.1,True
+TSK-4005,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,43,12,31,4.4,False
+TSK-4006,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,52,20,32,6.1,True
+TSK-4007,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,102,23,79,3.1,False
+TSK-4008,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,81,11,70,2.6,True
+TSK-4009,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,37,11,26,4.8,False
+TSK-4010,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,62,16,46,6.0,True
+TSK-4011,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,92,16,76,2.5,False
+TSK-4012,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,70,12,58,2.7,True
+TSK-4013,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,56,13,43,5.0,False
+TSK-4014,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,66,20,46,5.9,True
+TSK-4015,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,94,16,78,3.4,False
+TSK-4016,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,87,12,75,2.2,True
+TSK-4017,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,39,9,30,4.7,False
+TSK-4018,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,61,13,48,7.4,True
+TSK-4019,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,85,21,64,2.9,False
+TSK-4020,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,87,12,75,1.3,True
+TSK-4021,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,48,12,36,4.7,False
+TSK-4022,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,72,13,59,6.9,True
+TSK-4023,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,87,23,64,3.8,False
+TSK-4024,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,72,14,58,1.8,True
+TSK-4025,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,57,17,40,3.8,False
+TSK-4026,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,62,12,50,6.2,True
+TSK-4027,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,83,20,63,3.1,False
+TSK-4028,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,69,10,59,2.8,True
+TSK-4029,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,55,14,41,3.8,False
+TSK-4030,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,67,18,49,7.5,True
+TSK-4031,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,102,22,80,2.6,False
+TSK-4032,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,71,10,61,2.5,True
+TSK-4033,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,54,13,41,4.9,False
+TSK-4034,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,65,18,47,6.4,True
+TSK-4035,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,86,23,63,3.3,False
+TSK-4036,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,68,8,60,1.3,True
+TSK-4037,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,42,15,27,4.6,False
+TSK-4038,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,64,18,46,6.9,True
+TSK-4039,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,96,23,73,2.8,False
+TSK-4040,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,84,7,77,2.4,True
+TSK-4041,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,40,17,23,4.9,False
+TSK-4042,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,72,17,55,5.9,True
+TSK-4043,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,95,17,78,3.2,False
+TSK-4044,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,75,15,60,2.5,True
+TSK-4045,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,53,10,43,5.1,False
+TSK-4046,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,61,20,41,6.9,True
+TSK-4047,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,86,20,66,3.8,False
+TSK-4048,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,84,15,69,2.8,True
+TSK-4049,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,56,14,42,4.4,False
+TSK-4050,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,55,17,38,7.5,True
+TSK-4051,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,91,18,73,2.4,False
+TSK-4052,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,85,8,77,1.2,True
+TSK-4053,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,52,10,42,5.4,False
+TSK-4054,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,69,14,55,6.0,True
+TSK-4055,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,97,23,74,2.6,False
+TSK-4056,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,83,13,70,2.9,True
+TSK-4057,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,54,12,42,4.8,False
+TSK-4058,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,64,17,47,6.6,True
+TSK-4059,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,98,22,76,2.5,False
+TSK-4060,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,74,8,66,1.7,True
+TSK-4061,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,55,17,38,3.9,False
+TSK-4062,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,59,12,47,5.8,True
+TSK-4063,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,102,15,87,2.8,False
+TSK-4064,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,68,12,56,1.1,True
+TSK-4065,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,44,13,31,4.7,False
+TSK-4066,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,58,20,38,6.0,True
+TSK-4067,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,100,22,78,2.8,False
+TSK-4068,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,82,13,69,1.4,True
+TSK-4069,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,40,15,25,4.1,False
+TSK-4070,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,65,19,46,7.4,True
+TSK-4071,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,83,16,67,2.4,False
+TSK-4072,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,77,8,69,1.5,True
+TSK-4073,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,43,17,26,4.3,False
+TSK-4074,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,65,14,51,6.3,True
+TSK-4075,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,89,16,73,3.2,False
+TSK-4076,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,84,8,76,1.1,True
+TSK-4077,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,54,9,45,5.3,False
+TSK-4078,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,59,14,45,6.5,True
+TSK-4079,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,97,18,79,4.0,False
+TSK-4080,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,68,9,59,1.8,True
+TSK-4081,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,49,13,36,5.3,False
+TSK-4082,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,66,16,50,6.5,True
+TSK-4083,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,99,22,77,2.6,False
+TSK-4084,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,76,10,66,2.9,True
+TSK-4085,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,55,17,38,3.5,False
+TSK-4086,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,62,12,50,5.8,True
+TSK-4087,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,97,23,74,4.1,False
+TSK-4088,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,83,9,74,1.1,True
+TSK-4089,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,53,10,43,5.1,False
+TSK-4090,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,54,13,41,7.1,True
+TSK-4091,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,89,21,68,2.5,False
+TSK-4092,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,85,10,75,2.2,True
+TSK-4093,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,38,10,28,4.2,False
+TSK-4094,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,70,20,50,6.3,True
+TSK-4095,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,90,18,72,3.6,False
+TSK-4096,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,77,10,67,1.5,True
+TSK-4097,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,41,13,28,4.3,False
+TSK-4098,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,54,12,42,6.6,True
+TSK-4099,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,100,16,84,2.4,False
+TSK-4100,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,73,15,58,1.5,True
+TSK-4101,Data_Ingestion,Customer Support,Customer Reviews & Logs,Clean Staging Table,48,10,38,5.2,False
+TSK-4102,Anomaly_Detection,Warehouse Logistics,Staging Table,Flagged Outliers List,63,16,47,6.0,True
+TSK-4103,Sentiment_Extraction,Category Management,Flagged Reviews,Categorized Issue Matrix,99,19,80,3.5,False
+TSK-4104,Executive_Summary,Fraud Operations,Issue Matrix & Sales,1-Page Decision Table,87,15,72,1.0,True
+TSK-4105,Data_Ingestion,Finance Audit,Customer Reviews & Logs,Clean Staging Table,54,13,41,5.3,False
+TSK-4106,Anomaly_Detection,Customer Support,Staging Table,Flagged Outliers List,55,14,41,6.2,True
+TSK-4107,Sentiment_Extraction,Warehouse Logistics,Flagged Reviews,Categorized Issue Matrix,85,23,62,2.6,False
+TSK-4108,Executive_Summary,Category Management,Issue Matrix & Sales,1-Page Decision Table,76,10,66,2.4,True
+TSK-4109,Data_Ingestion,Fraud Operations,Customer Reviews & Logs,Clean Staging Table,43,13,30,4.4,False
+TSK-4110,Anomaly_Detection,Finance Audit,Staging Table,Flagged Outliers List,60,12,48,5.9,True
+TSK-4111,Sentiment_Extraction,Customer Support,Flagged Reviews,Categorized Issue Matrix,95,19,76,2.4,False
+TSK-4112,Executive_Summary,Warehouse Logistics,Issue Matrix & Sales,1-Page Decision Table,77,9,68,2.3,True
+TSK-4113,Data_Ingestion,Category Management,Customer Reviews & Logs,Clean Staging Table,45,11,34,4.9,False
+TSK-4114,Anomaly_Detection,Fraud Operations,Staging Table,Flagged Outliers List,69,18,51,6.8,True
+TSK-4115,Sentiment_Extraction,Finance Audit,Flagged Reviews,Categorized Issue Matrix,85,16,69,4.2,False
+TSK-4116,Executive_Summary,Customer Support,Issue Matrix & Sales,1-Page Decision Table,71,15,56,1.1,True
+TSK-4117,Data_Ingestion,Warehouse Logistics,Customer Reviews & Logs,Clean Staging Table,48,17,31,3.7,False
+TSK-4118,Anomaly_Detection,Category Management,Staging Table,Flagged Outliers List,56,12,44,6.3,True
+TSK-4119,Sentiment_Extraction,Fraud Operations,Flagged Reviews,Categorized Issue Matrix,83,20,63,2.7,False
+TSK-4120,Executive_Summary,Finance Audit,Issue Matrix & Sales,1-Page Decision Table,74,8,66,1.7,True

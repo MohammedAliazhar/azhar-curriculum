@@ -496,6 +496,12 @@ Name: final_bill_inr, dtype: float64
 
 ---
 
+## <font color='blue'>Announcements</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Remind learners to review the pre-read for Session 16.2: Visualizing Data with Python, where we will build charts using matplotlib and pandas.
+
+---
+
 # <font color='red'>Launch the Feedback Poll</font>
 
 > <font color="red">**🎯 Instructor Note**</font> Reminder: launch the feedback poll now to collect learner feedback.

@@ -1,0 +1,121 @@
+ticket_id,partner_id,category,query_text,tokens,classical_prediction,confidence,lat_classical_ms,lat_llm_ms,cost_usd
+1,DP-1001,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 1),34,payout_issue,0.95,3,631,0.00068
+2,DP-1002,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 2),20,address_wrong,0.95,4,865,0.0004
+3,DP-1003,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 3),33,order_delay,0.92,8,758,0.00066
+4,DP-1004,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 4),14,app_crash,0.86,3,771,0.00028
+5,DP-1005,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 5),28,cash_deposit,0.92,7,634,0.00056
+6,DP-1006,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 6),33,payout_issue,0.86,8,1439,0.00066
+7,DP-1007,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 7),31,address_wrong,0.95,5,593,0.00062
+8,DP-1008,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 8),18,order_delay,0.88,8,1445,0.00036
+9,DP-1009,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 9),16,cash_deposit,0.84,4,1269,0.00032
+10,DP-1010,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 10),24,app_crash,0.96,3,1315,0.00048
+11,DP-1011,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 11),33,payout_issue,0.94,5,668,0.00066
+12,DP-1012,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 12),30,address_wrong,0.83,3,1355,0.0006
+13,DP-1013,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 13),21,order_delay,0.92,8,1320,0.00042
+14,DP-1014,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 14),35,app_crash,0.93,3,673,0.0007
+15,DP-1015,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 15),36,cash_deposit,0.97,5,743,0.00072
+16,DP-1016,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 16),14,payout_issue,0.9,6,1149,0.00028
+17,DP-1017,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 17),39,address_wrong,0.88,5,913,0.00078
+18,DP-1018,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 18),19,order_delay,0.94,8,1126,0.00038
+19,DP-1019,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 19),33,cash_deposit,0.92,8,726,0.00066
+20,DP-1020,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 20),17,app_crash,0.85,7,1081,0.00034
+21,DP-1021,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 21),26,payout_issue,0.94,5,1029,0.00052
+22,DP-1022,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 22),39,address_wrong,0.96,3,1049,0.00078
+23,DP-1023,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 23),37,order_delay,0.87,5,1401,0.00074
+24,DP-1024,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 24),19,app_crash,0.86,7,1224,0.00038
+25,DP-1025,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 25),27,cash_deposit,0.84,6,1519,0.00054
+26,DP-1026,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 26),15,payout_issue,0.95,4,1118,0.0003
+27,DP-1027,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 27),26,address_wrong,0.88,7,1397,0.00052
+28,DP-1028,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 28),17,order_delay,0.84,7,1590,0.00034
+29,DP-1029,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 29),13,cash_deposit,0.93,3,893,0.00026
+30,DP-1030,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 30),37,app_crash,0.92,8,1444,0.00074
+31,DP-1031,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 31),26,payout_issue,0.91,6,1538,0.00052
+32,DP-1032,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 32),30,address_wrong,0.94,3,814,0.0006
+33,DP-1033,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 33),29,order_delay,0.84,5,1276,0.00058
+34,DP-1034,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 34),26,app_crash,0.82,4,1509,0.00052
+35,DP-1035,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 35),35,cash_deposit,0.99,8,1119,0.0007
+36,DP-1036,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 36),35,payout_issue,0.98,4,1619,0.0007
+37,DP-1037,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 37),33,address_wrong,0.92,5,1619,0.00066
+38,DP-1038,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 38),17,order_delay,0.91,5,910,0.00034
+39,DP-1039,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 39),36,cash_deposit,0.92,7,581,0.00072
+40,DP-1040,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 40),27,app_crash,0.98,3,809,0.00054
+41,DP-1041,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 41),40,payout_issue,0.83,5,1070,0.0008
+42,DP-1042,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 42),31,address_wrong,0.94,3,755,0.00062
+43,DP-1043,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 43),38,order_delay,0.84,3,837,0.00076
+44,DP-1044,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 44),28,app_crash,0.87,7,918,0.00056
+45,DP-1045,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 45),31,cash_deposit,0.98,6,1013,0.00062
+46,DP-1046,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 46),35,payout_issue,0.94,8,991,0.0007
+47,DP-1047,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 47),25,address_wrong,0.89,8,1344,0.0005
+48,DP-1048,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 48),29,order_delay,0.86,6,827,0.00058
+49,DP-1049,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 49),14,cash_deposit,0.92,5,623,0.00028
+50,DP-1050,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 50),19,app_crash,0.82,7,1031,0.00038
+51,DP-1051,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 51),36,payout_issue,0.86,8,700,0.00072
+52,DP-1052,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 52),14,address_wrong,0.91,5,725,0.00028
+53,DP-1053,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 53),20,order_delay,0.86,8,1574,0.0004
+54,DP-1054,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 54),17,app_crash,0.86,8,1548,0.00034
+55,DP-1055,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 55),27,cash_deposit,0.84,6,969,0.00054
+56,DP-1056,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 56),32,payout_issue,0.89,6,1305,0.00064
+57,DP-1057,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 57),27,address_wrong,0.93,8,690,0.00054
+58,DP-1058,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 58),33,order_delay,0.89,3,704,0.00066
+59,DP-1059,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 59),22,cash_deposit,0.85,3,1089,0.00044
+60,DP-1060,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 60),29,app_crash,0.89,6,867,0.00058
+61,DP-1061,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 61),22,payout_issue,0.97,6,1091,0.00044
+62,DP-1062,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 62),15,address_wrong,0.83,6,780,0.0003
+63,DP-1063,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 63),29,order_delay,0.98,3,771,0.00058
+64,DP-1064,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 64),20,app_crash,0.9,4,1412,0.0004
+65,DP-1065,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 65),18,cash_deposit,0.85,6,700,0.00036
+66,DP-1066,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 66),11,payout_issue,0.98,6,1123,0.00022
+67,DP-1067,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 67),38,address_wrong,0.89,6,1164,0.00076
+68,DP-1068,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 68),36,order_delay,0.85,7,1576,0.00072
+69,DP-1069,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 69),21,cash_deposit,0.92,4,699,0.00042
+70,DP-1070,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 70),29,app_crash,0.83,3,1222,0.00058
+71,DP-1071,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 71),32,payout_issue,0.98,6,1609,0.00064
+72,DP-1072,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 72),29,address_wrong,0.98,4,696,0.00058
+73,DP-1073,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 73),14,order_delay,0.92,4,720,0.00028
+74,DP-1074,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 74),34,app_crash,0.84,4,1406,0.00068
+75,DP-1075,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 75),30,cash_deposit,0.93,4,661,0.0006
+76,DP-1076,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 76),24,payout_issue,0.87,8,1650,0.00048
+77,DP-1077,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 77),21,address_wrong,0.86,4,1223,0.00042
+78,DP-1078,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 78),25,order_delay,0.9,4,1194,0.0005
+79,DP-1079,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 79),36,cash_deposit,0.9,3,599,0.00072
+80,DP-1080,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 80),30,app_crash,0.91,3,730,0.0006
+81,DP-1081,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 81),30,payout_issue,0.98,5,851,0.0006
+82,DP-1082,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 82),15,address_wrong,0.87,4,1336,0.0003
+83,DP-1083,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 83),26,order_delay,0.92,7,1199,0.00052
+84,DP-1084,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 84),38,app_crash,0.93,8,596,0.00076
+85,DP-1085,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 85),29,cash_deposit,0.98,5,792,0.00058
+86,DP-1086,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 86),15,payout_issue,0.97,5,816,0.0003
+87,DP-1087,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 87),36,address_wrong,0.87,7,898,0.00072
+88,DP-1088,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 88),32,order_delay,0.85,4,1282,0.00064
+89,DP-1089,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 89),32,cash_deposit,0.9,5,1615,0.00064
+90,DP-1090,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 90),13,app_crash,0.96,3,1447,0.00026
+91,DP-1091,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 91),15,payout_issue,0.95,3,1263,0.0003
+92,DP-1092,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 92),33,address_wrong,0.95,5,910,0.00066
+93,DP-1093,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 93),29,order_delay,0.92,8,1455,0.00058
+94,DP-1094,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 94),16,app_crash,0.91,3,885,0.00032
+95,DP-1095,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 95),38,cash_deposit,0.89,5,883,0.00076
+96,DP-1096,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 96),12,payout_issue,0.97,5,1326,0.00024
+97,DP-1097,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 97),38,address_wrong,0.86,3,1312,0.00076
+98,DP-1098,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 98),20,order_delay,0.88,8,790,0.0004
+99,DP-1099,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 99),29,cash_deposit,0.98,6,896,0.00058
+100,DP-1100,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 100),19,app_crash,0.97,4,942,0.00038
+101,DP-1101,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 101),14,payout_issue,0.95,4,1260,0.00028
+102,DP-1102,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 102),26,address_wrong,0.87,8,1088,0.00052
+103,DP-1103,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 103),37,order_delay,0.89,8,801,0.00074
+104,DP-1104,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 104),14,app_crash,0.85,6,1035,0.00028
+105,DP-1105,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 105),26,cash_deposit,0.96,5,1205,0.00052
+106,DP-1106,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 106),18,payout_issue,0.93,4,628,0.00036
+107,DP-1107,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 107),25,address_wrong,0.97,5,1150,0.0005
+108,DP-1108,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 108),37,order_delay,0.93,5,1299,0.00074
+109,DP-1109,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 109),24,cash_deposit,0.98,8,1258,0.00048
+110,DP-1110,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 110),15,app_crash,0.92,5,945,0.0003
+111,DP-1111,payout_issue,Weekly payout is short by 600 rupees for Kukatpally hub (Ref 111),22,payout_issue,0.92,3,802,0.00044
+112,DP-1112,address_wrong,Customer location is marked on highway instead of apartment gate (Ref 112),24,address_wrong,0.89,8,1222,0.00048
+113,DP-1113,order_delay,Restaurant delay of 25 minutes for order 4092 at Indiranagar (Ref 113),28,order_delay,0.97,3,1368,0.00056
+114,DP-1114,app_crash,App froze during OTP entry for cash delivery order 3910 (Ref 114),19,app_crash,0.94,5,670,0.00038
+115,DP-1115,cash_deposit,Deposited 1400 cash at bank counter but balance not updated (Ref 115),12,cash_deposit,0.88,7,983,0.00024
+116,DP-1116,payout_issue,Incentive bonus for Sunday peak hours missing from statement (Ref 116),13,payout_issue,0.93,8,1256,0.00026
+117,DP-1117,address_wrong,Customer not answering phone call at HSR sector 2 gate (Ref 117),34,address_wrong,0.91,3,1195,0.00068
+118,DP-1118,order_delay,Traffic block on flyover causing delivery delay for order 8812 (Ref 118),34,order_delay,0.89,6,1248,0.00068
+119,DP-1119,cash_deposit,Payment gateway failed during cash settlement in rider wallet (Ref 119),21,cash_deposit,0.85,7,840,0.00042
+120,DP-1120,app_crash,App crashing repeatedly on Android 14 after latest update (Ref 120),33,app_crash,0.92,6,936,0.00066

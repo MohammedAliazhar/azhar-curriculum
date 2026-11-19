@@ -1,172 +1,119 @@
-# Connecting the Tools
-> Pre-Read — Academic Session 37 | Module 4: GenAI for Analytics Workflows + Basic Python
+## <span style="color:#2F7DDE">Connecting the Tools</span>
+
+### <span style="color:#2F7DDE">Mental Map</span>
+
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 45, 'rankSpacing': 55, 'padding': 20}}}%%
+flowchart TB
+  CUR["<b>Current Session</b><br/>Connecting the Tools"]
+  Q["<b>The Big Question</b><br/><i>How do data teams link spreadsheets, SQL databases, Python scripts, and Tableau dashboards into one automated workflow?</i>"]
+  CV["<b>Course use case</b><br/>Assemble 120 multi-source retail transactions into an automated daily sales pipeline"]
+  RL["<b>Real-world example</b><br/>Daily omni-channel retail sales consolidation across Indian metro stores"]
+
+  CUR ==> Q
+  Q ==>|&nbsp;Used in the course&nbsp;| CV
+  Q ==>|&nbsp;Seen in real life&nbsp;| RL
+
+  classDef currSes fill:#ef6c00,stroke:#e65100,color:#ffffff,stroke-width:3px
+  classDef ask fill:#1565c0,stroke:#0d47a1,color:#ffffff,stroke-width:3px
+  classDef val fill:#2e7d32,stroke:#1b5e20,color:#ffffff,stroke-width:3px
+
+  class CUR currSes
+  class Q ask
+  class CV,RL val
+
+  linkStyle default stroke-width:3px
+```
+
 ---
 
-## Mental Map
+### <span style="color:#2F7DDE">What You'll Learn</span>
 
-<div style="overflow-x: scroll; max-width: 100%; display: block;">
+Have you ever wondered how retail chains with hundreds of stores combine daily registers, online web orders, and warehouse tables without losing hours to manual spreadsheet copying?
 
-```mermaid
-%%{init: {'themeVariables': {'fontSize': '16px'}, 'flowchart': {'useMaxWidth': false, 'htmlLabels': true, 'nodeSpacing': 80, 'rankSpacing': 120, 'wrappingWidth': 620, 'padding': 20}}}%%
-flowchart LR
+By the end of this session, you will be able to:
 
-START["<b>Course Start</b>"]
+- <span style="color:#D9660B">**Extract**</span> sales data from both offline spreadsheet files and SQL database queries.
+- <span style="color:#D9660B">**Harmonize**</span> mismatched column names and schemas using Python pandas methods.
+- <span style="color:#D9660B">**Filter**</span> duplicate transaction IDs and invalid records with automated validation gates.
+- <span style="color:#D9660B">**Export**</span> clean, structured tables to refresh interactive Tableau dashboards.
+- <span style="color:#D9660B">**Organize**</span> an automated four-stage pipeline (Extract, Validate, Transform, Deliver) end-to-end.
 
-subgraph foundation[" WHERE WE ARE "]
-direction LR
-    CURMOD["<b>CURRENT MODULE</b><br/><i>Module 4: GenAI for Analytics Workflows + Basic Python</i><br/>&nbsp;<br/><b>Covered so far:</b> Getting Started with Python Data · Cleaning Data with Pandas · Visualizing Data with Python<br/>plus 8 earlier Module 4 sessions<br/>This is Session 37 of 41"]
-    CURSES["<b>CURRENT SESSION</b><br/><b>Connecting the Tools</b><br/>&nbsp;<br/><i>The shift:</i> from <i>using each tool on its own</i> to <b>connecting spreadsheets, SQL, Tableau and Python into one organised workflow with a check at every hand-off</b><br/>&nbsp;<br/>Combining outputs from spreadsheets, SQL, Tableau and Python<br/>Connecting different tools into one workflow<br/>Organising analysis steps end to end"]
-end
+> <span style="color:#2F7DDE">**Topics you will meet:**</span> Multi-source data ingestion; SQL and Excel staging; Schema harmonization; Automated validation gates; Tableau data exports; End-to-end analytics pipelines.
+>
+> Join the session to learn each of these in detail.
 
-subgraph outcome[" OUTCOME OF THIS SESSION "]
-direction LR
-    OUT["<b>By the end, you can…</b><br/>&nbsp;<br/>Combine a SQL export and a spreadsheet of Kirana365 figures in Python,<br/>hand the result to a dashboard, and document the workflow<br/>with a check at every hand-off"]
-end
+---
 
-subgraph value[" WHY IT MATTERS "]
-direction LR
-    CVAL["<b>Course Value</b><br/>This is the structure the end-to-end session follows from raw data to final insight"]
-    RVAL["<b>Real-Life Value</b><br/>Replacing copy-and-paste between tools with a hand-off you can repeat and trust"]
-end
+### <span style="color:#2F7DDE">Why You Are Learning This Topic</span>
 
-subgraph future[" WHAT COMES NEXT "]
-direction LR
-    U0["<b>Next Session</b><br/>End-to-End Analytics Workflow<br/><i>Now we run one complete analysis from question to communicated insight</i>"]
-    U1["<b>Later in Module 4</b><br/>Statistics: Distributions; Insights and Drawing Conclusions"]
-    U2["<b>Upcoming</b><br/>Capstone Project<br/><i>Joining tools into one workflow is exactly how the capstone is assembled</i>"]
-end
+A retail chain sells clothing in 15 physical mall stores and on an online mobile app.
 
-START ==>|" begin "| CURMOD
-CURMOD ==>|" progress "| CURSES
-CURSES ==>|" you get "| OUT
-OUT ==>|" course "| CVAL
-OUT ==>|" real life "| RVAL
-CURSES ==>|" next up "| U0
-U0 -.->|" then "| U1
-U1 -.->|" ahead "| U2
+Every evening, offline stores email daily cash register spreadsheets, while app orders log into a live MySQL database.
 
-classDef startBox fill:#F7FAFC,stroke:#4A5568,stroke-width:2px,color:#1A202C
-classDef curModBox fill:#FFF8E6,stroke:#B7791F,stroke-width:2px,color:#1A202C
-classDef curSessBox fill:#E6FFFA,stroke:#0D9488,stroke-width:3px,color:#1A202C
-classDef outBox fill:#FEF2F2,stroke:#DC2626,stroke-width:3px,color:#1A202C
-classDef valueBox fill:#F3E8FF,stroke:#7C3AED,stroke-width:2px,color:#1A202C
-classDef futureBox fill:#ECFDF5,stroke:#047857,stroke-width:2px,color:#1A202C
+An analyst spends four hours every morning copying numbers across files.
 
-class START startBox
-class CURMOD curModBox
-class CURSES curSessBox
-class OUT outBox
-class CVAL,RVAL valueBox
-class U0,U1,U2 futureBox
+A mismatched tax column name and 6 duplicated rows accidentally inflate daily sales by ₹3.8 lakh.
 
-linkStyle default stroke-width:2px
-```
+Executives make incorrect stock replenishment decisions based on distorted numbers.
 
-</div>
+A <span style="color:#D9660B">**pipeline**</span> means an automated software workflow that extracts raw records, checks data validity, executes calculations, and delivers clean tables directly to executive dashboards.
 
-## What You'll Learn
-In this pre-read, you'll discover:
-- How to combine outputs from spreadsheets, SQL, Tableau and Python
-- How to merge two tables on a shared key in pandas
-- How to organise analysis steps end to end
-- Why every hand-off between tools needs a check
+Connecting these tools ensures corporate reports are 100% accurate, refreshing in seconds instead of requiring half a day of manual grunt work.
 
-## A. Combining Outputs from Spreadsheets, SQL, Tableau and Python
+> <span style="color:#2F7DDE">**Think about it:**</span> What happens when an automated script intercepts a corrupted transaction before it enters a leadership presentation?
 
-**💡 Analogy**: Think of a relay race. Each runner is good at their leg, but the race is won or lost at the baton hand-off. Tools are the runners, and the exported file is the baton.
+---
 
-**Each tool does what it is best at, and files such as CSV are how results pass from one to the next.**
+### <span style="color:#2F7DDE">The Omni-Channel Retail Pipeline Puzzle</span>
 
-**Worked example**:
+A consolidated morning staging log captures transactions from multiple source channels.
 
-| Tool | Best at | Hands over |
-|---|---|---|
-| SQL | Pulling the right rows from the database | A CSV export |
-| Spreadsheet | Small inputs kept by hand, such as ad spend | A CSV or sheet |
-| Python | Cleaning, merging, calculating | A clean table |
-| Tableau | Interactive dashboards | A view for stakeholders |
+| Order ID | Source System | City | Raw Amount (₹) | Tax (₹) | Status |
+|:--------:|:--------------|:-----|:--------------:|:-------:|:------:|
+| ORD-5001 | MySQL_Database | Bengaluru | 2,100 | 378 | Validated |
+| ORD-5002 | Excel_Store_Upload | Mumbai | 1,850 | 333 | Validated |
+| ORD-5011 | Excel_Store_Upload | Delhi | 3,200 | *blank* | Header_Mismatch |
+| ORD-5022 | Mobile_App_Sync | Hyderabad | 4,100 | 738 | Duplicate_ID |
 
-**⚠️ Common trap**: Copy-pasting between tools. Pasted numbers cannot be repeated or traced, and they go wrong silently.
+<span style="color:#D9660B">**What you want to happen:**</span>
 
-## B. Connecting Different Tools into One Workflow
+- Ingest orders from both SQL database connections and Excel uploads into one staging table.
+- Rename the mismatched offline column header automatically so tax calculations do not fail.
+- Isolate duplicate order ORD-5022 into an error log while safely passing the valid orders to Tableau.
 
-**💡 Analogy**: Think of a zip fastener. Two sides line up on a shared tooth pattern. Two tables line up on a shared key such as city name.
-
-**Merge tables in pandas with `merge`, joining on a column that exists in both.**
-
-**Worked example**: SQL export gives units by city. A spreadsheet gives ad spend (₹ lakh) by city:
+Here is how it might start. You do not need to understand it yet.
 
 ```python
-sql = pd.DataFrame({"city": ["Pune", "Bengaluru", "Chennai"], "units": [5, 9, 6]})
-sheet = pd.DataFrame({"city": ["Pune", "Bengaluru", "Chennai"], "ad_spend": [2, 3, 4]})
-
-joined = sql.merge(sheet, on="city")
-joined["units_per_lakh"] = joined["units"] / joined["ad_spend"]
+import pandas as pd
+df = pd.read_csv("data/multi_tool_retail_pipeline.csv").head(4)
+print(df[["order_id", "source_system", "validation_flag", "net_revenue_inr"]])
 ```
 
-| City | Units | Ad spend | Units per lakh |
-|---|---|---|---|
-| Pune | 5 | 2 | 2.5 |
-| Bengaluru | 9 | 3 | 3.0 |
-| Chennai | 6 | 4 | 1.5 |
+> <span style="color:#D9660B">**Wonder about this:**</span>
+>
+> - Why do enterprises use both SQL databases and spreadsheets instead of choosing only one?
+> - How do validation gates protect executive dashboards from bad inputs?
 
-Save it with `joined.to_csv("city_summary.csv", index=False)` and open that file in Tableau.
+---
 
-**⚠️ Common trap**: Merging on keys that do not match exactly. If one table says "Bengaluru" and the other "Bangalore", the row silently disappears from the result.
+### <span style="color:#2F7DDE">Think It Through</span>
 
-## C. Organising Analysis Steps End to End
+There is no wrong first try. Keep your guesses for the session.
 
-**💡 Analogy**: Think of a kitchen layout with a station for each task and a path between them. Organising a workflow means naming the stations and the order, so anyone can cook the same dish.
+**1. If an offline store uploads a sheet with column header "Tax" while the central database uses "tax_inr", how does Python fix this without manual editing?**
+Hint: Consider functions that rename column dictionary keys in a DataFrame.
 
-**Write the workflow as numbered steps, each with its input, its output and the check that must pass before the next step.**
+**2. Why should an automated pipeline isolate bad rows into an error log instead of crashing the entire script?**
+Hint: Think about whether the other 95% of valid store orders should still be processed and reported on time.
 
-**Worked example**:
+**3. What is the role of Tableau in this connected workflow compared to Python?**
+Hint: Think about which tool performs data cleaning transformations and which provides interactive clickable dashboards for business leaders.
 
-| Step | Tool | Check before moving on |
-|---|---|---|
-| 1. Pull units by city | SQL | 3 cities, total units = 20 |
-| 2. Add ad spend | Spreadsheet | 3 cities, no blanks |
-| 3. Merge | Python | 3 rows in, 3 rows out |
-| 4. Calculate units per lakh | Python | Totals still 20 units |
-| 5. Visualise | Tableau | Chart matches the table |
+---
 
-If the merge key were mistyped so Pune dropped to 3 units, the total would read 18 instead of 20. The total check catches this at step 4, not in front of leadership.
+### <span style="color:#2F7DDE">One Question to Carry Into the Session</span>
 
-**⚠️ Common trap**: Checking only the final dashboard. Every hand-off is a place for numbers to be lost, so check each one.
-
-```mermaid
-%%{init: {'themeVariables': {'fontSize': '16px'}, 'flowchart': {'useMaxWidth': false, 'htmlLabels': true, 'nodeSpacing': 80, 'rankSpacing': 120, 'wrappingWidth': 620, 'padding': 20}}}%%
-flowchart LR
-    A[SQL export] --> C[Python merge]
-    B[Spreadsheet] --> C
-    C --> D{Rows and totals match?}
-    D -->|Yes| E[Tableau dashboard]
-    D -->|No| F[Fix the hand-off]
-
-linkStyle default stroke-width:2px
-```
-
-## Quick Reference — Connecting Tools
-
-| Your situation | Use this | Because |
-|---|---|---|
-| Two tables share a column | `a.merge(b, on="col")` | Combines them row by row |
-| Passing results to another tool | Export a CSV, do not copy-paste | Repeatable and traceable |
-| After every merge | Compare row counts and totals | Silent drops are the main risk |
-| Planning the workflow | Step, tool, check, in a table | Anyone can rerun it |
-| Handing to Tableau | `to_csv("file.csv", index=False)` | A clean file with no extra index column |
-
-## Practice Exercises
-
-1. **Pattern Recognition**: In the merge example, which column is the key, and what would go wrong if one table had "Bangalore"?
-
-2. **Concept Detective**: Why is a copy-paste from SQL results into a spreadsheet risky in a repeated workflow?
-
-3. **Real-Life Application**: Design a 4-step workflow that uses SQL, Python and Tableau to answer "which city turns ad spend into the most units?". Add a check to each step.
-
-4. **Spot the Error**: A merged table has 2 rows where you expected 3. Which tool step would you inspect first?
-
-5. **Planning Ahead**: Next session we run a complete analysis from question to insight. Which three tools from today's table would you use, and in what order?
-
-> ✅ **You're done!** You can now combine tools into one workflow, merge tables on a shared key, and put a check at every hand-off.
-Next session, we run a complete analysis in **End-to-End Analytics Workflow**.
+> <span style="color:#2F7DDE">**How does linking separate tools into an automated pipeline eliminate four hours of daily manual grunt work?**</span>
+>
+> What is the single most critical checkpoint in an end-to-end data pipeline?

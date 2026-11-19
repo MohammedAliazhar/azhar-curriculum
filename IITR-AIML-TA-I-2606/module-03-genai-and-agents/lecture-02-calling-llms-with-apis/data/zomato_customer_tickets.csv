@@ -1,0 +1,121 @@
+ticket_id,customer_id,issue_type,user_message,prompt_tokens,completion_tokens,total_tokens,status_code,latency_ms
+ZOM-1001,CUST-6828,missing_item,Order #4812 missing garlic bread and dips (Ref #1),18,65,83,200,600
+ZOM-1002,CUST-5712,delivery_delay,Rider stationary at signals for 25 mins (Ref #2),41,43,84,200,908
+ZOM-1003,CUST-5767,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #3),31,34,65,200,380
+ZOM-1004,CUST-9597,delivery_delay,Rider stationary at signals for 25 mins (Ref #4),25,94,119,200,377
+ZOM-1005,CUST-8679,delivery_delay,Rider stationary at signals for 25 mins (Ref #5),40,83,123,200,575
+ZOM-1006,CUST-8462,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #6),26,30,56,200,513
+ZOM-1007,CUST-7757,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #7),26,49,75,200,570
+ZOM-1008,CUST-7940,missing_item,Order #4812 missing garlic bread and dips (Ref #8),20,78,98,200,449
+ZOM-1009,CUST-8763,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #9),37,63,100,200,394
+ZOM-1010,CUST-9522,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #10),21,78,99,200,430
+ZOM-1011,CUST-6575,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #11),44,76,120,200,941
+ZOM-1012,CUST-5653,missing_item,Order #4812 missing garlic bread and dips (Ref #12),19,59,78,200,646
+ZOM-1013,CUST-7277,delivery_delay,Rider stationary at signals for 25 mins (Ref #13),45,42,87,200,739
+ZOM-1014,CUST-8032,spilled_food,Gravy container burst inside packaging bag (Ref #14),38,0,38,429,55
+ZOM-1015,CUST-9990,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #15),24,64,88,200,423
+ZOM-1016,CUST-8786,delivery_delay,Rider stationary at signals for 25 mins (Ref #16),35,61,96,200,517
+ZOM-1017,CUST-5458,spilled_food,Gravy container burst inside packaging bag (Ref #17),26,58,84,200,682
+ZOM-1018,CUST-8286,delivery_delay,Rider stationary at signals for 25 mins (Ref #18),44,34,78,200,673
+ZOM-1019,CUST-7577,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #19),20,57,77,200,930
+ZOM-1020,CUST-8758,delivery_delay,Rider stationary at signals for 25 mins (Ref #20),38,93,131,200,755
+ZOM-1021,CUST-9598,delivery_delay,Rider stationary at signals for 25 mins (Ref #21),26,47,73,200,602
+ZOM-1022,CUST-8271,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #22),26,84,110,200,947
+ZOM-1023,CUST-9042,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #23),25,47,72,200,871
+ZOM-1024,CUST-6252,missing_item,Order #4812 missing garlic bread and dips (Ref #24),42,36,78,200,462
+ZOM-1025,CUST-8152,delivery_delay,Rider stationary at signals for 25 mins (Ref #25),43,84,127,200,415
+ZOM-1026,CUST-7059,spilled_food,Gravy container burst inside packaging bag (Ref #26),37,89,126,200,891
+ZOM-1027,CUST-9398,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #27),45,0,45,401,23
+ZOM-1028,CUST-7404,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #28),42,73,115,200,464
+ZOM-1029,CUST-7157,spilled_food,Gravy container burst inside packaging bag (Ref #29),23,88,111,200,353
+ZOM-1030,CUST-5871,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #30),42,52,94,200,869
+ZOM-1031,CUST-6252,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #31),44,94,138,200,553
+ZOM-1032,CUST-9344,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #32),42,50,92,200,902
+ZOM-1033,CUST-5159,missing_item,Order #4812 missing garlic bread and dips (Ref #33),37,71,108,200,850
+ZOM-1034,CUST-5474,missing_item,Order #4812 missing garlic bread and dips (Ref #34),29,69,98,200,595
+ZOM-1035,CUST-8981,delivery_delay,Rider stationary at signals for 25 mins (Ref #35),36,40,76,200,437
+ZOM-1036,CUST-8893,missing_item,Order #4812 missing garlic bread and dips (Ref #36),42,46,88,200,481
+ZOM-1037,CUST-9969,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #37),23,63,86,200,890
+ZOM-1038,CUST-8268,spilled_food,Gravy container burst inside packaging bag (Ref #38),24,55,79,200,669
+ZOM-1039,CUST-7030,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #39),32,87,119,200,473
+ZOM-1040,CUST-9819,delivery_delay,Rider stationary at signals for 25 mins (Ref #40),20,73,93,200,371
+ZOM-1041,CUST-5581,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #41),25,58,83,200,357
+ZOM-1042,CUST-7706,missing_item,Order #4812 missing garlic bread and dips (Ref #42),25,38,63,200,382
+ZOM-1043,CUST-8976,missing_item,Order #4812 missing garlic bread and dips (Ref #43),34,60,94,200,635
+ZOM-1044,CUST-9720,delivery_delay,Rider stationary at signals for 25 mins (Ref #44),35,46,81,200,934
+ZOM-1045,CUST-6559,spilled_food,Gravy container burst inside packaging bag (Ref #45),25,90,115,200,766
+ZOM-1046,CUST-8469,missing_item,Order #4812 missing garlic bread and dips (Ref #46),21,85,106,200,712
+ZOM-1047,CUST-5496,spilled_food,Gravy container burst inside packaging bag (Ref #47),32,36,68,200,450
+ZOM-1048,CUST-7036,spilled_food,Gravy container burst inside packaging bag (Ref #48),41,0,41,429,51
+ZOM-1049,CUST-8456,delivery_delay,Rider stationary at signals for 25 mins (Ref #49),24,87,111,200,493
+ZOM-1050,CUST-5617,delivery_delay,Rider stationary at signals for 25 mins (Ref #50),26,89,115,200,605
+ZOM-1051,CUST-9428,spilled_food,Gravy container burst inside packaging bag (Ref #51),43,42,85,200,401
+ZOM-1052,CUST-8329,missing_item,Order #4812 missing garlic bread and dips (Ref #52),20,60,80,200,520
+ZOM-1053,CUST-5480,spilled_food,Gravy container burst inside packaging bag (Ref #53),33,57,90,200,760
+ZOM-1054,CUST-7172,delivery_delay,Rider stationary at signals for 25 mins (Ref #54),30,30,60,200,749
+ZOM-1055,CUST-8986,spilled_food,Gravy container burst inside packaging bag (Ref #55),27,84,111,200,919
+ZOM-1056,CUST-5479,delivery_delay,Rider stationary at signals for 25 mins (Ref #56),24,67,91,200,572
+ZOM-1057,CUST-5468,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #57),41,37,78,200,671
+ZOM-1058,CUST-9350,missing_item,Order #4812 missing garlic bread and dips (Ref #58),36,91,127,200,864
+ZOM-1059,CUST-6522,delivery_delay,Rider stationary at signals for 25 mins (Ref #59),19,95,114,200,432
+ZOM-1060,CUST-8307,missing_item,Order #4812 missing garlic bread and dips (Ref #60),37,38,75,200,590
+ZOM-1061,CUST-9870,missing_item,Order #4812 missing garlic bread and dips (Ref #61),36,61,97,200,942
+ZOM-1062,CUST-9781,missing_item,Order #4812 missing garlic bread and dips (Ref #62),37,40,77,200,779
+ZOM-1063,CUST-6673,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #63),34,70,104,200,617
+ZOM-1064,CUST-6072,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #64),25,63,88,200,755
+ZOM-1065,CUST-5076,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #65),32,70,102,200,424
+ZOM-1066,CUST-9404,spilled_food,Gravy container burst inside packaging bag (Ref #66),37,42,79,200,425
+ZOM-1067,CUST-7859,delivery_delay,Rider stationary at signals for 25 mins (Ref #67),34,63,97,200,485
+ZOM-1068,CUST-6292,missing_item,Order #4812 missing garlic bread and dips (Ref #68),25,77,102,200,641
+ZOM-1069,CUST-5064,spilled_food,Gravy container burst inside packaging bag (Ref #69),44,68,112,200,891
+ZOM-1070,CUST-7166,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #70),27,43,70,200,487
+ZOM-1071,CUST-7308,missing_item,Order #4812 missing garlic bread and dips (Ref #71),21,49,70,200,628
+ZOM-1072,CUST-7162,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #72),24,73,97,200,558
+ZOM-1073,CUST-5756,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #73),33,0,33,500,852
+ZOM-1074,CUST-5029,spilled_food,Gravy container burst inside packaging bag (Ref #74),44,65,109,200,395
+ZOM-1075,CUST-6323,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #75),42,46,88,200,618
+ZOM-1076,CUST-5079,spilled_food,Gravy container burst inside packaging bag (Ref #76),35,84,119,200,924
+ZOM-1077,CUST-5295,missing_item,Order #4812 missing garlic bread and dips (Ref #77),20,49,69,200,908
+ZOM-1078,CUST-6044,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #78),36,48,84,200,790
+ZOM-1079,CUST-7931,missing_item,Order #4812 missing garlic bread and dips (Ref #79),27,76,103,200,390
+ZOM-1080,CUST-7897,delivery_delay,Rider stationary at signals for 25 mins (Ref #80),39,61,100,200,455
+ZOM-1081,CUST-6939,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #81),45,82,127,200,508
+ZOM-1082,CUST-5203,delivery_delay,Rider stationary at signals for 25 mins (Ref #82),43,52,95,200,772
+ZOM-1083,CUST-7032,delivery_delay,Rider stationary at signals for 25 mins (Ref #83),41,72,113,200,771
+ZOM-1084,CUST-5317,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #84),23,43,66,200,741
+ZOM-1085,CUST-7864,spilled_food,Gravy container burst inside packaging bag (Ref #85),25,55,80,200,821
+ZOM-1086,CUST-5193,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #86),44,59,103,200,578
+ZOM-1087,CUST-5568,delivery_delay,Rider stationary at signals for 25 mins (Ref #87),30,72,102,200,635
+ZOM-1088,CUST-9392,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #88),29,95,124,200,759
+ZOM-1089,CUST-6462,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #89),18,0,18,429,61
+ZOM-1090,CUST-9887,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #90),26,34,60,200,461
+ZOM-1091,CUST-9966,spilled_food,Gravy container burst inside packaging bag (Ref #91),29,70,99,200,796
+ZOM-1092,CUST-6557,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #92),21,79,100,200,940
+ZOM-1093,CUST-9259,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #93),19,85,104,200,351
+ZOM-1094,CUST-8533,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #94),39,55,94,200,722
+ZOM-1095,CUST-6020,missing_item,Order #4812 missing garlic bread and dips (Ref #95),39,72,111,200,671
+ZOM-1096,CUST-7672,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #96),34,69,103,200,768
+ZOM-1097,CUST-6042,spilled_food,Gravy container burst inside packaging bag (Ref #97),40,67,107,200,917
+ZOM-1098,CUST-9662,delivery_delay,Rider stationary at signals for 25 mins (Ref #98),31,78,109,200,528
+ZOM-1099,CUST-7350,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #99),30,30,60,200,661
+ZOM-1100,CUST-8619,delivery_delay,Rider stationary at signals for 25 mins (Ref #100),31,71,102,200,826
+ZOM-1101,CUST-8876,spilled_food,Gravy container burst inside packaging bag (Ref #101),39,57,96,200,873
+ZOM-1102,CUST-9222,delivery_delay,Rider stationary at signals for 25 mins (Ref #102),39,40,79,200,640
+ZOM-1103,CUST-7542,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #103),28,41,69,200,590
+ZOM-1104,CUST-5200,delivery_delay,Rider stationary at signals for 25 mins (Ref #104),43,55,98,200,500
+ZOM-1105,CUST-8730,missing_item,Order #4812 missing garlic bread and dips (Ref #105),25,90,115,200,424
+ZOM-1106,CUST-9049,spilled_food,Gravy container burst inside packaging bag (Ref #106),38,54,92,200,743
+ZOM-1107,CUST-5873,spilled_food,Gravy container burst inside packaging bag (Ref #107),25,48,73,200,355
+ZOM-1108,CUST-8805,spilled_food,Gravy container burst inside packaging bag (Ref #108),25,52,77,200,880
+ZOM-1109,CUST-8739,missing_item,Order #4812 missing garlic bread and dips (Ref #109),35,61,96,200,474
+ZOM-1110,CUST-9578,delivery_delay,Rider stationary at signals for 25 mins (Ref #110),43,89,132,200,893
+ZOM-1111,CUST-8495,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #111),28,86,114,200,866
+ZOM-1112,CUST-8686,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #112),32,50,82,200,836
+ZOM-1113,CUST-9270,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #113),42,61,103,200,633
+ZOM-1114,CUST-8603,spilled_food,Gravy container burst inside packaging bag (Ref #114),38,60,98,200,631
+ZOM-1115,CUST-7225,missing_item,Order #4812 missing garlic bread and dips (Ref #115),40,66,106,200,590
+ZOM-1116,CUST-6235,wrong_order,Received vegetarian thali instead of chicken biryani (Ref #116),28,40,68,200,491
+ZOM-1117,CUST-5526,delivery_delay,Rider stationary at signals for 25 mins (Ref #117),30,49,79,200,569
+ZOM-1118,CUST-8816,spilled_food,Gravy container burst inside packaging bag (Ref #118),31,72,103,200,905
+ZOM-1119,CUST-8190,spilled_food,Gravy container burst inside packaging bag (Ref #119),19,56,75,200,780
+ZOM-1120,CUST-8116,refund_status,Refund for cancelled order #9021 not reflected in bank account (Ref #120),40,32,72,200,939

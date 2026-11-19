@@ -1,0 +1,121 @@
+review_id,product_category,review_text,complex_reasoning,zero_shot_pred,few_shot_pred,cot_pred,ground_truth
+REV-2001,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #1)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2002,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #2)",False,Positive,Positive,Positive,Positive
+REV-2003,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #3),True,Positive,Negative,Negative,Negative
+REV-2004,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #4)",False,Positive,Positive,Positive,Positive
+REV-2005,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #5)",True,Positive,Positive,Negative,Negative
+REV-2006,shoes,Sole peeled off within one week of normal jogging in park (Review #6),False,Negative,Negative,Negative,Negative
+REV-2007,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #7)",True,Negative,Positive,Positive,Positive
+REV-2008,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #8)",False,Negative,Negative,Negative,Negative
+REV-2009,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #9),False,Positive,Positive,Positive,Positive
+REV-2010,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #10)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2011,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #11)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2012,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #12)",False,Positive,Positive,Positive,Positive
+REV-2013,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #13),True,Positive,Negative,Negative,Negative
+REV-2014,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #14)",False,Positive,Positive,Positive,Positive
+REV-2015,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #15)",True,Positive,Positive,Negative,Negative
+REV-2016,shoes,Sole peeled off within one week of normal jogging in park (Review #16),False,Negative,Negative,Negative,Negative
+REV-2017,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #17)",True,Negative,Positive,Positive,Positive
+REV-2018,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #18)",False,Negative,Negative,Negative,Negative
+REV-2019,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #19),False,Positive,Positive,Positive,Positive
+REV-2020,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #20)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2021,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #21)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2022,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #22)",False,Positive,Positive,Positive,Positive
+REV-2023,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #23),True,Positive,Negative,Negative,Negative
+REV-2024,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #24)",False,Positive,Positive,Positive,Positive
+REV-2025,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #25)",True,Positive,Positive,Negative,Negative
+REV-2026,shoes,Sole peeled off within one week of normal jogging in park (Review #26),False,Negative,Negative,Negative,Negative
+REV-2027,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #27)",True,Negative,Positive,Positive,Positive
+REV-2028,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #28)",False,Negative,Negative,Negative,Negative
+REV-2029,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #29),False,Positive,Positive,Positive,Positive
+REV-2030,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #30)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2031,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #31)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2032,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #32)",False,Positive,Positive,Positive,Positive
+REV-2033,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #33),True,Positive,Negative,Negative,Negative
+REV-2034,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #34)",False,Positive,Positive,Positive,Positive
+REV-2035,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #35)",True,Positive,Positive,Negative,Negative
+REV-2036,shoes,Sole peeled off within one week of normal jogging in park (Review #36),False,Negative,Negative,Negative,Negative
+REV-2037,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #37)",True,Negative,Positive,Positive,Positive
+REV-2038,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #38)",False,Negative,Negative,Negative,Negative
+REV-2039,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #39),False,Positive,Positive,Positive,Positive
+REV-2040,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #40)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2041,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #41)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2042,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #42)",False,Positive,Positive,Positive,Positive
+REV-2043,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #43),True,Positive,Negative,Negative,Negative
+REV-2044,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #44)",False,Positive,Positive,Positive,Positive
+REV-2045,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #45)",True,Positive,Positive,Negative,Negative
+REV-2046,shoes,Sole peeled off within one week of normal jogging in park (Review #46),False,Negative,Negative,Negative,Negative
+REV-2047,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #47)",True,Negative,Positive,Positive,Positive
+REV-2048,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #48)",False,Negative,Negative,Negative,Negative
+REV-2049,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #49),False,Positive,Positive,Positive,Positive
+REV-2050,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #50)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2051,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #51)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2052,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #52)",False,Positive,Positive,Positive,Positive
+REV-2053,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #53),True,Positive,Negative,Negative,Negative
+REV-2054,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #54)",False,Positive,Positive,Positive,Positive
+REV-2055,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #55)",True,Positive,Positive,Negative,Negative
+REV-2056,shoes,Sole peeled off within one week of normal jogging in park (Review #56),False,Negative,Negative,Negative,Negative
+REV-2057,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #57)",True,Negative,Positive,Positive,Positive
+REV-2058,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #58)",False,Negative,Negative,Negative,Negative
+REV-2059,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #59),False,Positive,Positive,Positive,Positive
+REV-2060,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #60)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2061,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #61)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2062,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #62)",False,Positive,Positive,Positive,Positive
+REV-2063,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #63),True,Positive,Negative,Negative,Negative
+REV-2064,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #64)",False,Positive,Positive,Positive,Positive
+REV-2065,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #65)",True,Positive,Positive,Negative,Negative
+REV-2066,shoes,Sole peeled off within one week of normal jogging in park (Review #66),False,Negative,Negative,Negative,Negative
+REV-2067,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #67)",True,Negative,Positive,Positive,Positive
+REV-2068,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #68)",False,Negative,Negative,Negative,Negative
+REV-2069,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #69),False,Positive,Positive,Positive,Positive
+REV-2070,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #70)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2071,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #71)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2072,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #72)",False,Positive,Positive,Positive,Positive
+REV-2073,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #73),True,Positive,Negative,Negative,Negative
+REV-2074,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #74)",False,Positive,Positive,Positive,Positive
+REV-2075,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #75)",True,Positive,Positive,Negative,Negative
+REV-2076,shoes,Sole peeled off within one week of normal jogging in park (Review #76),False,Negative,Negative,Negative,Negative
+REV-2077,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #77)",True,Negative,Positive,Positive,Positive
+REV-2078,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #78)",False,Negative,Negative,Negative,Negative
+REV-2079,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #79),False,Positive,Positive,Positive,Positive
+REV-2080,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #80)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2081,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #81)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2082,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #82)",False,Positive,Positive,Positive,Positive
+REV-2083,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #83),True,Positive,Negative,Negative,Negative
+REV-2084,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #84)",False,Positive,Positive,Positive,Positive
+REV-2085,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #85)",True,Positive,Positive,Negative,Negative
+REV-2086,shoes,Sole peeled off within one week of normal jogging in park (Review #86),False,Negative,Negative,Negative,Negative
+REV-2087,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #87)",True,Negative,Positive,Positive,Positive
+REV-2088,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #88)",False,Negative,Negative,Negative,Negative
+REV-2089,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #89),False,Positive,Positive,Positive,Positive
+REV-2090,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #90)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2091,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #91)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2092,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #92)",False,Positive,Positive,Positive,Positive
+REV-2093,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #93),True,Positive,Negative,Negative,Negative
+REV-2094,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #94)",False,Positive,Positive,Positive,Positive
+REV-2095,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #95)",True,Positive,Positive,Negative,Negative
+REV-2096,shoes,Sole peeled off within one week of normal jogging in park (Review #96),False,Negative,Negative,Negative,Negative
+REV-2097,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #97)",True,Negative,Positive,Positive,Positive
+REV-2098,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #98)",False,Negative,Negative,Negative,Negative
+REV-2099,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #99),False,Positive,Positive,Positive,Positive
+REV-2100,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #100)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2101,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #101)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2102,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #102)",False,Positive,Positive,Positive,Positive
+REV-2103,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #103),True,Positive,Negative,Negative,Negative
+REV-2104,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #104)",False,Positive,Positive,Positive,Positive
+REV-2105,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #105)",True,Positive,Positive,Negative,Negative
+REV-2106,shoes,Sole peeled off within one week of normal jogging in park (Review #106),False,Negative,Negative,Negative,Negative
+REV-2107,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #107)",True,Negative,Positive,Positive,Positive
+REV-2108,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #108)",False,Negative,Negative,Negative,Negative
+REV-2109,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #109),False,Positive,Positive,Positive,Positive
+REV-2110,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #110)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2111,smartphone,"Camera is superb and sharp, but battery drains in 3 hours with overheating (Review #111)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
+REV-2112,headphones,"Sound quality is punchy and bass is deep, worth every single rupee (Review #112)",False,Positive,Positive,Positive,Positive
+REV-2113,laptop,Display is bright but trackpad stopped working on day 2. Very disappointed (Review #113),True,Positive,Negative,Negative,Negative
+REV-2114,tshirt,"Fabric feels soft and fitting is as expected, fast delivery (Review #114)",False,Positive,Positive,Positive,Positive
+REV-2115,smartwatch,"Great job Flipkart, delivered an empty box after waiting two weeks! (Review #115)",True,Positive,Positive,Negative,Negative
+REV-2116,shoes,Sole peeled off within one week of normal jogging in park (Review #116),False,Negative,Negative,Negative,Negative
+REV-2117,powerbank,"Charges phone fast, slightly heavy to carry in pocket but works well (Review #117)",True,Negative,Positive,Positive,Positive
+REV-2118,mixer_grinder,"Motor smells burning when grinding idli batter, making loud screeching sound (Review #118)",False,Negative,Negative,Negative,Negative
+REV-2119,backpack,Zippers are smooth and water resistance handled heavy rain nicely (Review #119),False,Positive,Positive,Positive,Positive
+REV-2120,smart_tv,"Picture panel is 4K crisp, but software UI freezes constantly during navigation (Review #120)",True,Positive,Mixed/Negative,Mixed/Negative,Mixed/Negative
