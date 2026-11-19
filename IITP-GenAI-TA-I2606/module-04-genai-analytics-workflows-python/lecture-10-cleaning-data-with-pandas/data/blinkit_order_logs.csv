@@ -1,0 +1,121 @@
+row_id,order_id,area_raw,item_count,item_total_inr,delivery_fee_inr
+1,1001,Indiranagar,3,450,30.0
+2,1002, Koramangala ,2,280,25.0
+3,1003,Whitefield,,150,30.0
+4,1004,Indiranagar,1,120,
+5,1004,Indiranagar,1,120,
+6,1005,koramangala,4,600,25.0
+7,1006,Whitefield,2,310,30.0
+8,1007,Whitefield,3,520,25.0
+9,1008, Indiranagar,2,290,30.0
+10,1009,Koramangala,5,750,25.0
+11,1010,Indiranagar,2,340,30.0
+12,1011,koramangala ,1,180,
+13,1012,Whitefield,4,620,25.0
+14,1013, Whitefield ,2,319,25.0
+15,1014,Whitefield,1,1144,25.0
+16,1015,Whitefield,5,1029,25.0
+17,1016,Indiranagar,3,550,30.0
+18,1017,Indiranagar,3,651,30.0
+19,1018,Whitefield ,1,850,25.0
+20,1019,Indiranagar,3,586,30.0
+21,1020,koramangala,2,539,25.0
+22,1021,Whitefield,5,444,30.0
+23,1022,Whitefield,2,224,25.0
+24,1023,Koramangala,2,754,30.0
+25,1023,Koramangala,2,754,30.0
+26,1024,Koramangala,6,652,30.0
+27,1025, whitefield,4,393,25.0
+28,1026,Indiranagar,2,974,30.0
+29,1027,Koramangala ,5,133,25.0
+30,1028,Whitefield,3,806,30.0
+31,1029,Indiranagar ,5,1149,30.0
+32,1030,whitefield,2,440,25.0
+33,1031,Whitefield,1,739,25.0
+34,1032,Whitefield,1,251,25.0
+35,1033,Indiranagar,5,1190,30.0
+36,1034,Indiranagar,6,748,30.0
+37,1035,Koramangala,4,570,
+38,1036, Indiranagar,5,255,25.0
+39,1037,Indiranagar,3,597,30.0
+40,1038, indiranagar ,5,1078,25.0
+41,1039,indiranagar,3,1066,25.0
+42,1040,Whitefield,6,934,25.0
+43,1041, indiranagar ,4,485,25.0
+44,1042, indiranagar ,1,140,25.0
+45,1043,indiranagar,2,230,25.0
+46,1044,Koramangala ,3,1106,30.0
+47,1045,Indiranagar,5,234,25.0
+48,1046, indiranagar ,5,1150,25.0
+49,1047, Indiranagar,4,614,25.0
+50,1047, Indiranagar,4,614,25.0
+51,1048, whitefield,5,644,30.0
+52,1049, Indiranagar,6,1046,25.0
+53,1050, indiranagar ,1,546,25.0
+54,1051,Koramangala,2,433,30.0
+55,1052,Whitefield,6,723,25.0
+56,1053,Indiranagar,6,667,25.0
+57,1054, Whitefield ,5,214,30.0
+58,1055,koramangala,2,646,30.0
+59,1056,Whitefield,,264,25.0
+60,1057, Whitefield ,5,990,30.0
+61,1058,Koramangala,1,540,25.0
+62,1059,Koramangala,4,426,25.0
+63,1060,Indiranagar,2,160,30.0
+64,1061,Koramangala,6,656,25.0
+65,1062,Koramangala,4,1052,25.0
+66,1063, Indiranagar,4,252,30.0
+67,1064,Koramangala,4,788,25.0
+68,1065,koramangala,1,999,30.0
+69,1066,Koramangala,5,499,30.0
+70,1067, indiranagar ,6,513,25.0
+71,1068,Whitefield,5,365,30.0
+72,1069,Whitefield ,3,715,25.0
+73,1070,Koramangala,4,466,30.0
+74,1071,Koramangala,3,990,30.0
+75,1072, Koramangala ,5,457,30.0
+76,1073,Whitefield,5,591,25.0
+77,1074,Indiranagar,2,259,25.0
+78,1075,Whitefield,4,412,25.0
+79,1076,Indiranagar,2,1170,25.0
+80,1076,Indiranagar,2,1170,25.0
+81,1077,indiranagar,6,759,30.0
+82,1078,Whitefield,5,1023,30.0
+83,1079, Koramangala ,6,1177,25.0
+84,1080,koramangala,2,764,25.0
+85,1081,indiranagar,6,548,
+86,1082,Koramangala ,4,970,25.0
+87,1083,Whitefield,3,908,30.0
+88,1084,Whitefield,5,561,30.0
+89,1085,Koramangala ,3,938,30.0
+90,1086,Indiranagar,,916,25.0
+91,1087,Indiranagar,2,482,
+92,1088,Koramangala ,3,886,30.0
+93,1089,Koramangala,,216,30.0
+94,1090,Indiranagar,,173,25.0
+95,1091,Indiranagar,2,344,25.0
+96,1092,Koramangala,3,344,25.0
+97,1093,Koramangala,3,878,25.0
+98,1094, Indiranagar,1,727,25.0
+99,1095,Whitefield,3,868,
+100,1096,Whitefield ,4,851,30.0
+101,1097,whitefield,6,663,30.0
+102,1098, koramangala,3,612,25.0
+103,1099,Koramangala,2,886,30.0
+104,1100, Koramangala ,3,807,30.0
+105,1100, Koramangala ,3,807,30.0
+106,1101,whitefield,1,942,25.0
+107,1102,Whitefield ,4,300,30.0
+108,1103, whitefield,3,1197,30.0
+109,1104,Koramangala,3,582,25.0
+110,1105, koramangala,6,553,30.0
+111,1106, whitefield,5,315,30.0
+112,1107,Indiranagar ,1,369,25.0
+113,1108,whitefield,6,1115,25.0
+114,1109,Whitefield ,4,215,30.0
+115,1110,Indiranagar,4,219,30.0
+116,1111,Indiranagar,1,962,25.0
+117,1112,Whitefield ,3,988,25.0
+118,1113,Whitefield,1,535,30.0
+119,1114,whitefield,2,430,
+120,1115,Koramangala,4,584,30.0

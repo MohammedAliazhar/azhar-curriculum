@@ -42,6 +42,11 @@ Always cross-reference the batch's curriculum CSV before writing any content:
   2. Already taught in a prior session listed in `curriculum/<BATCH_ID>.csv`.
 - If an algorithm or library belongs to a future session, **it is strictly banned**. Solve the problem using only the tools learners already possess.
 
+### Guardrail 3: Mandatory Real Data and Publication-Grade Visuals
+- **Dataset (`data/`)**: Every lecture using data must have a 100-150 row realistic dataset in `data/<name>.csv` (with planned edge cases: duplicates, missing values, messy text casing/spaces). Never use synthetic toy dictionaries alone.
+- **Visuals (`images/`)**: Every lecture must generate 5-6 real PNG charts/diagrams saved in `images/` (900px wide, 200 dpi), embedded with `<p align="center"><img src="images/XX_name.png" alt="..." width="900"></p>`.
+- **Closing & Outcome**: Every lecture must include an Outcome comparison table (Before vs After across the full dataset), `Therefore,` conclusion, Poll reveal note, Summary table with a `**Practical value**` row, and `# <font color='red'>Launch the Feedback Poll</font>` with reminder note.
+
 ---
 
 ## 3. Standard File & Folder Layout

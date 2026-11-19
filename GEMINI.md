@@ -49,6 +49,12 @@ Every time a pre-read or lecture script is created or edited, strictly enforce:
 * Check all code libraries, functions, and SQL syntax: if it is neither part of today's LOs nor taught in previous sessions, it is strictly banned.
 * **Zero forward references**: Never write "more on this in later modules", "we will cover this next week", or preview upcoming topics.
 
+### Guardrail 3: Mandatory Real Data, Visuals, and Closing Structure
+* **Dataset (`data/`)**: Always include a 100-150 row CSV dataset in `data/` with realistic planned edge cases (duplicates, missing values, spaces, casing). Code starts with rows 1-10 and scales to all rows in Topic 4/Closing.
+* **Visuals (`images/`)**: Always generate 5-6 real PNG charts/diagrams (900px wide, dpi 200) in `images/` embedded with `<p align="center"><img src="images/XX_name.png" alt="..." width="900"></p>`.
+* **Closing Elements**: Must include Outcome comparison table (Before vs After), `Therefore,` deduction, Opening Poll reveal note, Summary table with `Practical value`, and `# <font color='red'>Launch the Feedback Poll</font>` with Reminder instructor note.
+* **Agenda Format**: Closing row must use `—` marker (`| — | Closing: Outcome & Summary | | MIN |`) with total summing to `**120**`. Only 🎯 emoji is allowed.
+
 ---
 
 ## 4. Templates
