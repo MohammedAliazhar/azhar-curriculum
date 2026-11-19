@@ -87,11 +87,13 @@ Every lecture lives in its own sequentially numbered directory with exactly two 
 ### B. Generating a Pre-Read (`pre-read.md`)
 1. **Resolve Folder** using `tools/resolve_folder.py`.
 2. **Fill the Pre-Read Template** ([`templates/pre-read-template.md`](templates/pre-read-template.md)):
-   - **Mental Map**: Mermaid flowchart with 4 distinct subgraphs (`foundation`, `outcome`, `value`, `future`).
-   - **What You'll Learn**: Outcome bullets starting with Bloom's verbs.
-   - **Core Concepts**: Sections A, B, C with plain English intuition, diagrams, and concise code.
-   - **Scenario Puzzle & Think It Through**: 3 guided questions with hints (no answers).
-   - **Setup**: Included only if software installation is required.
+   - **Mental Map**: Mermaid flowchart (`flowchart TB`) connecting Current Session, The Big Question, Course use case, and Real-world example.
+   - **What You'll Learn**: Hook question followed by 4 Bloom's action verb bullets (plain English, no jargon, no buzzwords).
+   - **Why You Are Learning This Topic**: 4-6 sentences introducing the Indian company scenario and defining the core term once upon introduction.
+   - **Scenario Puzzle**: Small markdown table of messy data, 3 bulleted goals, and "Wonder about this" reflection questions.
+   - **Think It Through**: Exactly 3 guided questions with one-line hints (no answers given).
+   - **One Question to Carry Into the Session**: Thought-provoking open-ended question.
+   - **Setup**: Included only if new software installation is required (omitted by default).
 
 ---
 

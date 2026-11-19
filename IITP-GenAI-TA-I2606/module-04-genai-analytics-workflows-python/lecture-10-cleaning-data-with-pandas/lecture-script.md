@@ -1,243 +1,459 @@
-# Lecture Script: Cleaning Data with Pandas
-**Session 16.1 · Module 4: GenAI for Analytics Workflows + Basic Python**
-**Duration: 90 minutes · Audience: 40-60 learners · Prerequisite: pre-read; 13.1 (validation), 15.2 (pandas basics)**
+# <font color='#1d4ed8'>Lecture Script: Cleaning Data with Pandas</font>
 
 ---
 
-## Timing table
+## <font color='blue'>Agenda</font>
 
-| # | Block | Minutes | Running total |
-|---|-------|---------|---------------|
-| 1 | Opening hook | 5 | 5 |
-| 2 | From Known to New | 7 | 12 |
-| 3 | A. Diagnose the problems | 13 | 25 |
-| 4 | B. Duplicates | 8 | 33 |
-| 5 | C. Missing values | 17 | 50 |
-| 6 | D. Modify columns and values | 12 | 62 |
-| 7 | E. Simple transformations | 10 | 72 |
-| 8 | Live practice: clean it end to end | 13 | 85 |
-| 9 | Wrap-up and bridge | 5 | 90 |
-| | **Total** | **90** | |
+The lecture runs as four topics. Each topic ends with a quiz.
 
-**Running example (same as pre-read):** `orders_messy.csv`, 7 rows. Problems: duplicate 104; missing units (103); missing price (106); `"north "` (105). Clean result: 5 rows, revenue 4,500 / 2,500 / 1,500 / 6,000 / 3,000, total 17,500; by region North 8,500, South 4,500, West 4,500.
+| Topic | What we do | Learning objectives covered | Minutes |
+|:-:|:--|:--|:-:|
+| 1 | Finding and removing duplicate records | Handle missing values and duplicates in pandas | 25 |
+| 2 | Detecting and handling missing data | Clean data using pandas | 25 |
+| 3 | Modifying and standardizing column values | Modify columns and values | 25 |
+| 4 | Transforming columns and calculating metrics | Perform simple transformations on datasets | 25 |
+| — | Closing: Outcome & Summary | | 20 |
+| | **Total** | | **120** |
 
-**Setup:** share `orders_messy.csv` with learners beforehand (or a cell that writes it). Keep an untouched copy of the raw file.
+> <font color="red">**🎯 Instructor Note**</font> Pace: Spend ample time on missing values and string transformations as beginners often struggle with missing value arithmetic and whitespace.
+> Keep deduplication fast and visual to build early momentum.
 
 ---
 
-## Block 1 · Opening hook (5 min)
+## <font color='blue'>Scenario</font>
 
-**Say:**
-> "Imagine a dashboard that shows North region with half the sales of South. The head of sales is about to restructure the North team. Then someone notices: the data had 'North', 'north', and 'North ' with a space, and pandas counted them as three different regions. North was never small. It was *split*."
+At Blinkit's quick-commerce operations hub in Bengaluru, analysts review morning grocery deliveries across three major dark stores: Indiranagar, Koramangala, and Whitefield. When app servers record orders during peak breakfast rush, network glitches and customer inputs create noisy logs:
 
-> "Dirty data does not announce itself. It gives you a confident, wrong answer. Today you learn to catch it."
+| Order ID | Area | Items | Item Total (₹) | Delivery Fee (₹) | Issue Present |
+|:--------:|:-----|:-----:|:--------------:|:----------------:|:--------------|
+| 101 | Indiranagar | 3 | 450 | 30.0 | Clean record |
+| 102 | &nbsp;Koramangala&nbsp; | 2 | 280 | 25.0 | Extra spaces in area name |
+| 103 | Whitefield | *missing* | 150 | 30.0 | Missing item count |
+| 104 | Indiranagar | 1 | 120 | *missing* | Network retry duplicate, missing fee |
+| 104 | Indiranagar | 1 | 120 | *missing* | Identical duplicate row |
+| 105 | koramangala | 4 | 600 | 25.0 | Lowercase area name |
+| 106 | Whitefield | 2 | 310 | 30.0 | Clean record |
 
-**Transition:** "You already clean data. You just do it with a mouse."
+> <font color="red">**🎯 Instructor Note**</font> Blinkit is used only as an illustrative industry setting. All order logs and amounts are created for this lesson.
 
 ---
 
-## Block 2 · From Known to New (7 min)
+## <font color='blue'>Problem Statement</font>
 
-**Hook:**
-> "In a spreadsheet you delete the duplicate row, fix the typo, type something in the blank. Same jobs. In pandas, there are two upgrades: it works on thousands of rows at once, and it is *written down*. Next month, you rerun the same cleaning on the new file."
+An operations analyst generated a morning revenue report directly from the raw order table without checking data quality. Because order 104 was logged twice, order revenue was overcounted. Worse, because order 104 had a missing delivery fee, an arithmetic calculation turned the entire order total into a blank missing value. Simultaneously, because Koramangala was recorded with extra spaces in one row and lowercase letters in another, the dark store's sales were split across two separate categories, making it appear understaffed and failing.
 
-**Show `orders_messy.csv` on screen.** Ask: "Spot the problems." *(Give 2 minutes. Aim for four: duplicate 104, missing units on 103, missing price on 106, `"north "` on 105.)*
+> <font color='purple'>**How can we clean and transform raw order data in pandas to ensure every order is counted accurately?**</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Poll: "What happens when you add a number to a missing (NaN) value in pandas: does it ignore the missing value or return NaN?" Give learners 30 seconds to respond in chat. Reveal the answer in the Closing.
+
+---
+
+## <font color='blue'>What We Will Use</font>
+
+We will clean and transform the order log using four focused tools in pandas:
+
+| Topic | Tools | In one line |
+|:-:|:--|:--|
+| 1 | `df.duplicated()`, `df.drop_duplicates()` | Find and remove repeated rows |
+| 2 | `df.isna()`, `df.dropna()`, `df.fillna()` | Detect, remove, or replace missing values |
+| 3 | `.str.strip()`, `.str.title()`, `.astype()` | Clean text whitespace, standardize casing, and convert types |
+| 4 | Column arithmetic (`+`), `df.rename()` | Compute derived columns and rename headers for clear reporting |
+
+---
+
+## <font color='blue'>How: Walking Through the Blinkit Order Cleanup</font>
 
 ```mermaid
 flowchart LR
-    A[Messy data] --> B[Painful: analyse as is, wrong totals]
-    A --> C[Better: clean with pandas first]
-    C --> D[Reliable table, steps recorded in code]
+    A["Topic 1<br>Drop Duplicates"] --> B["Topic 2<br>Handle Missing Values"]
+    B --> C["Topic 3<br>Clean Text & Types"]
+    C --> D["Topic 4<br>Transform Columns"]
+    D --> E["Closing<br>Accurate Area Revenue"]
+    style A fill:#dbeafe,stroke:#2563eb
+    style B fill:#dcfce7,stroke:#16a34a
+    style C fill:#fef3c7,stroke:#d97706
+    style D fill:#ede9fe,stroke:#7c3aed
+    style E fill:#fee2e2,stroke:#dc2626
 ```
-
-**Key line:** "Clean data is not a luxury. It is the validation step that comes before everything else."
 
 ---
 
-## Block 3 · A. Diagnose the problems (13 min)
+## <font color='blue'>Topic 1: Finding and Removing Duplicate Records</font> `25 min`
 
-**Hook:**
-> "A mechanic diagnoses before touching anything. So do we."
+> <font color='purple'>**How do we spot and remove repeated orders when network hiccups record the same transaction twice?**</font>
 
-**Live code (8 min):**
+### <font color='green'>Example: Identifying duplicate rows in the order table</font>
+
+> <font color='purple'>**Which rows in our delivery table are exact duplicates of an earlier row?**</font>
+
+**Predict before running: What will happen?**
+
+> <font color="red">**🎯 Instructor Note**</font> Learners usually spot the second order 104. Confirm that df.duplicated() returns True only for subsequent identical copies.
+
 ```python
 import pandas as pd
-df = pd.read_csv("orders_messy.csv")
-df.shape
-df.info()
-df.isna().sum()
-df.duplicated().sum()
-df["region"].unique()
+import numpy as np
+
+data = {'order_id': [101, 102, 103, 104, 104, 105, 106],
+        'area': ['Indiranagar', ' Koramangala ', 'Whitefield', 'Indiranagar', 'Indiranagar', 'koramangala', 'Whitefield'],
+        'items': [3, 2, np.nan, 1, 1, 4, 2],
+        'item_total': [450, 280, 150, 120, 120, 600, 310],
+        'delivery_fee': [30.0, 25.0, 30.0, np.nan, np.nan, 25.0, 30.0]}
+df = pd.DataFrame(data)
+print(df.duplicated())
 ```
-For each, predict first, then run. Expected: `(7, 5)`; units and price 6 non-null; missing 1 and 1; duplicates 1; regions include `'north '`.
 
-**Teach (3 min):** What each command catches. "`unique()` is how you catch spelling variants."
+**Output**
 
-**Quick check (2 min):** "Which command would reveal that 'north ' and 'North' both exist?" *(`unique()`.)*
+```
+0    False
+1    False
+2    False
+3    False
+4     True
+5    False
+6    False
+dtype: bool
+```
 
-**🔴 Trap:** "`df.isna().sum()` only finds *empty* cells. A value like 'N/A' or 'missing' typed as text will not be counted. Look at `unique()` as well."
+#### <font color='#c2410c'>Code Explanation</font>
 
-**💬 Expect pushback:** *"Can't I see this by looking at the table?"*
-> "With 7 rows, yes. With 70,000, you rely on these commands."
+- **Lines 4-9** Create the sample order DataFrame with 7 rows reflecting our delivery logs.
+- **Line 10** `df.duplicated()` inspects every row, marking row index 4 as `True` because it is identical to row index 3.
 
----
+> <font color='green'>**Result**</font> Row 4 is identified as a duplicate order that will cause double-counting if kept in the dataset.
 
-## Block 4 · B. Duplicates (8 min)
+### <font color='green'>Extending it: Removing duplicate rows while keeping the original record</font>
 
-**Hook:**
-> "If order 104 is counted twice, its revenue is double-counted. Nobody will complain about extra sales. That is why duplicates are dangerous: they flatter you."
+> <font color='purple'>**How do we drop the duplicate row and retain only unique orders?**</font>
 
-**Live code (4 min):**
+> <font color="red">**🎯 Instructor Note**</font> Ask learners how many rows should remain after dropping duplicates (6 rows).
+
 ```python
 df = df.drop_duplicates()
-df.shape
+print(df[['order_id', 'area', 'item_total']])
 ```
-Expected: `(6, 5)`.
 
-**Teach (2 min):** Keeps the first copy. Must assign back. "Without `df =`, nothing changes."
+**Output**
 
-**Show (1 min):** Run `df.drop_duplicates()` without assigning, then `df.shape`. Still the old size.
+```
+   order_id           area  item_total
+0       101    Indiranagar         450
+1       102   Koramangala          280
+2       103     Whitefield         150
+3       104    Indiranagar         120
+5       105    koramangala         600
+6       106     Whitefield         310
+```
 
-**Say (1 min):** "A real duplicate is a fully identical row. Two real orders can look similar. If you have an ID, use `subset=["order_id"]`."
+> <font color='green'>**Result**</font> The DataFrame is reduced from 7 rows to 6 unique transactions, preserving the first instance of order 104.
 
-**🔴 Trap:** "Dropping 'duplicates' that are really separate valid orders destroys real sales. Check before you remove."
+> <font color='#b45309'>**Common mistake**</font> Calling `df.drop_duplicates()` without reassigning it back to `df` leaves the original DataFrame unchanged.
 
-**💬 Expect pushback:** *"What if rows differ slightly, like one has a typo?"*
-> "Then they are not exact duplicates. Fix the text first, then check duplicates again. Order matters."
+### <font color='purple'>Quiz 1</font>
+
+**Question:** What does `df.drop_duplicates()` do by default when it encounters identical rows in a DataFrame?
+
+**Options:**
+- A) It removes all rows that have duplicate data, leaving none of them.
+- B) It keeps the first occurrence of each unique row and removes subsequent duplicate rows.
+- C) It replaces duplicate rows with blank values.
+- D) It merges all duplicate rows by adding their numerical values together.
+
+**Correct Answer:** B
+
+**Explanation:**
+- **A)** It preserves the first record and only discards repeated copies.
+- **B)** By default, pandas keeps the first appearance and drops any row identical to an earlier one.
+- **C)** It removes the entire duplicate row rather than inserting blank values.
+- **D)** Dropping duplicates performs row filtering, not numerical aggregation or merging.
 
 ---
 
-## Block 5 · C. Missing values (17 min)
+## <font color='blue'>Topic 2: Detecting and Handling Missing Data</font> `25 min`
 
-**Hook:**
-> "A form with a blank page. You can send it back. Or, if you *know* the answer for certain, you can fill it in. What you must not do is invent."
+> <font color='purple'>**Now that repeated orders are removed, how do we spot and handle empty fields in our remaining rows?**</font>
 
-**Teach the choice (5 min):** Drop vs. fill table. Spend time on the principle: "Pick on purpose. Record why."
+### <font color='green'>Example: Detecting missing values across columns</font>
 
-**Live code (7 min):**
+> <font color='purple'>**Which columns contain blank or unrecorded entries?**</font>
+
+**Predict before running: What will happen?**
+
+> <font color="red">**🎯 Instructor Note**</font> Learners usually notice items and delivery_fee have missing entries. Confirm that isna().sum() counts them per column.
+
 ```python
-df = df.dropna(subset=["units"])
-df["price"] = df["price"].fillna(500)
-df.shape
-```
-Explain the two decisions:
-- Order 103, units: no basis for a number, so drop.
-- Order 106, price: Chargers are 500 in every other order, so 500 is defensible.
-
-**Group discussion (4 min):** "What if we had filled the missing units with the average of the column? What happens to the revenue?" *(We would invent sales that may never have happened.)* "When *is* filling with a mean or median acceptable?" *(When the missing values are few, the column is numeric, and an average is a reasonable stand-in, and you say so.)*
-
-**Say (1 min):** "Always answer: how many rows did I lose? If cleaning removes 40% of the data, that is a finding."
-
-```mermaid
-flowchart LR
-    subgraph left_side["DROP THE ROW"]
-        D1[No defensible value to put there] --> D2[dropna] --> D3[Lose a row, invent nothing]
-    end
-    subgraph right_side["FILL THE BLANK"]
-        F1[A defensible value exists] --> F2[fillna] --> F3[Keep the row, record the choice]
-    end
+print(df.isna().sum())
 ```
 
-**🔴 Trap:** "Filling every blank with 0 is the most common silent error. Zero is a *value*, not 'unknown'. It drags averages down."
+**Output**
 
-**💬 Expect pushback:** *"My manager just wants the report. Can't I just fill and move on?"*
-> "You can, but you carry the risk. A one-line note, 'filled one price using the standard Charger price', protects both of you."
+```
+order_id        0
+area            0
+items           1
+item_total      0
+delivery_fee    1
+dtype: int64
+```
 
----
+#### <font color='#c2410c'>Code Explanation</font>
 
-## Block 6 · D. Modify columns and values (12 min)
+- **Line 1** `df.isna()` checks every cell for missing entries, and `.sum()` counts how many missing values appear in each column.
 
-**Hook:**
-> "The region column has 'north ' with a space. To a human it is North. To the computer it is a different word."
+> <font color='green'>**Result**</font> We see that items and delivery_fee each contain exactly one missing value that needs handling.
 
-**Live code (7 min):**
+### <font color='green'>Extending it: Filling missing values with business defaults</font>
+
+> <font color='purple'>**How can we fill missing fees and item counts so math calculations work without dropping real orders?**</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Ask learners why dropping row 104 would be bad (we would lose a valid ₹120 sale). Explain that 0.0 reflects a free delivery promo.
+
 ```python
-df["region"] = df["region"].str.strip().str.title()
-df["region"].unique()
-df["units"] = df["units"].astype(int)
-df.info()
+df['delivery_fee'] = df['delivery_fee'].fillna(0.0)
+df['items'] = df['items'].fillna(1.0)
+print(df[['order_id', 'items', 'delivery_fee']])
 ```
-Explain `.str` ("apply the text tool to every value"), `strip`, `title`, and why `astype(int)` is needed (NaN made units a float).
 
-**Demo (2 min):** Run `df.groupby("region")["units"].sum()` on a copy *before* the text fix to show North split into two groups. Then after. "This is the story from the opening."
+**Output**
 
-**Teach (2 min):** `rename`, `replace`, `.str.lower()`.
+```
+   order_id  items  delivery_fee
+0       101    3.0          30.0
+1       102    2.0          25.0
+2       103    1.0          30.0
+3       104    1.0           0.0
+5       105    4.0          25.0
+6       106    2.0          30.0
+```
 
-**Quick check (1 min):** "Why did `units` turn into decimals?" *(NaN is a decimal-type value.)*
+> <font color='green'>**Result**</font> Both columns now have complete numerical values with zero missing cells across all 6 orders.
 
-**🔴 Trap:** "Fix text *before* checking duplicates and grouping. 'North' and 'north ' will not match until they are cleaned."
+> <font color='#b45309'>**Common mistake**</font> Using `dropna()` hastily will delete valid transactions when only an optional fee was blank.
 
-**💬 Expect pushback:** *"Why `.str`?"*
-> "A column is not one string. `.str` says: apply this text operation to every string in the column."
+### <font color='purple'>Quiz 2</font>
+
+**Question:** When should an analyst use `fillna(0)` instead of `dropna()` on a missing fee column?
+
+**Options:**
+- A) When a missing value represents a waived or zero-cost charge and the rest of the order is valid.
+- B) Only when the column contains text instead of numbers.
+- C) When every column in that row is completely blank.
+- D) Whenever you want to automatically double the revenue.
+
+**Correct Answer:** A
+
+**Explanation:**
+- **A)** Filling with 0 keeps the valid transaction while correctly recording that no delivery fee was paid.
+- **B)** `fillna(0)` is used on numeric columns, not for text values.
+- **C)** If an entire row is blank, dropping it with `dropna()` is typically preferred.
+- **D)** Filling missing values with zero records a baseline value without artificially inflating revenue.
 
 ---
 
-## Block 7 · E. Simple transformations (10 min)
+## <font color='blue'>Topic 3: Modifying and Standardizing Column Values</font> `25 min`
 
-**Hook:**
-> "In a spreadsheet you write a formula and drag it down. In pandas you write it once, for the whole column."
+> <font color='purple'>**With no duplicate rows and no missing values, how do we clean up inconsistent area text and fix column data types?**</font>
 
-**Live code (6 min):**
+### <font color='green'>Example: Cleaning text whitespace and standardizing casing</font>
+
+> <font color='purple'>**How can we ensure " Koramangala " and "koramangala" are recognized as the exact same location?**</font>
+
+**Predict before running: What will happen?**
+
+> <font color="red">**🎯 Instructor Note**</font> Show learners that string methods in pandas require the .str accessor. Expected answer: all variants become 'Koramangala'.
+
 ```python
-df["revenue"] = df["units"] * df["price"]
-df
-df["revenue"].sum()
-df.groupby("region")["revenue"].sum()
+df['area'] = df['area'].str.strip().str.title()
+print(df['area'].unique())
 ```
-Expected: revenue 4,500 / 2,500 / 1,500 / 6,000 / 3,000; total 17,500; North 8,500, South 4,500, West 4,500.
 
-**Say:** "North is 8,500 only because we cleaned `'north '`. Cleaning changed the answer."
+**Output**
 
-**Save (2 min):**
+```
+['Indiranagar' 'Koramangala' 'Whitefield']
+```
+
+#### <font color='#c2410c'>Code Explanation</font>
+
+- **Line 1** `.str.strip()` removes accidental spaces at the start and end, and `.str.title()` capitalizes each word consistently.
+- **Line 2** `.unique()` prints the distinct area names, verifying that all entries now map cleanly to three locations.
+
+> <font color='green'>**Result**</font> The area column is standardized into three clean categories without accidental duplicates caused by spaces or casing.
+
+### <font color='green'>Extending it: Converting columns to proper integer data types</font>
+
+> <font color='purple'>**How do we convert item counts from decimal floats to clean whole numbers?**</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Explain that pandas automatically converts columns with missing values to float. Now that gaps are filled, we cast to int.
+
 ```python
-df.to_csv("orders_clean.csv", index=False)
+df['items'] = df['items'].astype(int)
+print(df[['order_id', 'items']].dtypes)
 ```
-"Raw file untouched. Clean file saved under a new name."
 
-**Quick check (2 min):** "What does `index=False` do?" *(Stops pandas writing its own row numbers as a column.)*
+**Output**
 
-**🔴 Trap:** "Do not overwrite the raw file. Raw data is evidence."
+```
+order_id    int64
+items       int64
+dtype: object
+```
 
-**💬 Expect pushback:** *"Can't I do all this in Excel?"*
-> "You can, for small data. But Excel cleaning is clicks nobody can replay. Here the steps are the documentation."
+> <font color='green'>**Result**</font> The items column is now stored cleanly as an integer type.
 
----
+> <font color='#b45309'>**Common mistake**</font> Trying to convert a column with missing values directly to int will fail, because standard integer types cannot hold missing values before they are filled.
 
-## Block 8 · Live practice: clean it end to end (13 min)
+### <font color='purple'>Quiz 3</font>
 
-**Task (9 min):** Give learners a **second messy file** (prepare beforehand, 8 rows, with a missing region, a negative price entered by mistake, a repeated order and 'SOUTH' capitalised). In pairs, they must:
-1. Diagnose, listing the problems found.
-2. Fix each, deciding drop vs. fill and noting why.
-3. Report how many rows were removed and changed.
-4. Add a `revenue` column and print the total.
+**Question:** Why does `" Koramangala "` not match `"Koramangala"` when grouping data in pandas?
 
-**Debrief (4 min):** Compare totals between pairs. If they differ, discuss which choice caused it. "Same data, different decisions, different answers. That is why you document."
+**Options:**
+- A) Pandas automatically deletes any string containing spaces.
+- B) Python string comparison checks exact characters, including whitespace and letter case.
+- C) Grouping operations only work on numeric columns.
+- D) String columns cannot be compared in pandas without a SQL database.
 
-**Say:** "Notice you had to *decide*, not just run commands. Cleaning is judgement."
+**Correct Answer:** B
 
----
-
-## Block 9 · Wrap-up and bridge (5 min)
-
-**Recap with the mental map open (2 min):**
-- Diagnose before fixing.
-- `drop_duplicates`, `dropna` / `fillna`, `str.strip().str.title()`, `astype`.
-- New columns from old ones.
-- Keep raw, count changes, recheck.
-
-**One-line takeaway:**
-> "Diagnose first, fix on purpose, record what you changed. Dirty data gives confident wrong answers."
-
-**Bridge (1 min):**
-> "Clean data is the input to a picture. In 16.2 you will draw line, bar and scatter charts with matplotlib, plot straight from a DataFrame, and compare Python plotting with Tableau."
-
-**Closing prompt (2 min):** "Write one cleaning decision you made today and the sentence you would put in a report to justify it."
+**Explanation:**
+- **A)** Pandas preserves strings with spaces and does not automatically delete them.
+- **B)** Python evaluates character by character, so extra spaces and lowercase letters make strings distinct.
+- **C)** Grouping works across both categorical text columns and numeric columns.
+- **D)** Pandas performs string matching and grouping natively without requiring an external database.
 
 ---
 
-## Instructor quick-reference
+## <font color='blue'>Topic 4: Transforming Columns and Calculating Metrics</font> `25 min`
 
-- **Same numbers everywhere:** 7 rows becoming 5; revenue 4,500 / 2,500 / 1,500 / 6,000 / 3,000; total 17,500; North 8,500, South 4,500, West 4,500.
-- **If long:** shorten the Block 8 file to 6 rows.
-- **If short:** add `value_counts()` and `df.describe()` before and after.
-- **Phrases to model:** "diagnose first", "assign back", "record the choice".
+> <font color='purple'>**Now that our columns are tidy and standardized, how do we transform them into actionable business numbers?**</font>
+
+### <font color='green'>Example: Calculating total order bill through row-by-row arithmetic</font>
+
+> <font color='purple'>**How do we compute the total amount paid by adding the item total and delivery fee for each order?**</font>
+
+**Predict before running: What will happen?**
+
+> <font color="red">**🎯 Instructor Note**</font> Remind learners that column arithmetic in pandas adds matching rows automatically. Expected bill for order 101: 450 + 30 = 480.
+
+```python
+df['final_bill'] = df['item_total'] + df['delivery_fee']
+print(df[['order_id', 'item_total', 'delivery_fee', 'final_bill']])
+```
+
+**Output**
+
+```
+   order_id  item_total  delivery_fee  final_bill
+0       101         450          30.0       480.0
+1       102         280          25.0       305.0
+2       103         150          30.0       180.0
+3       104         120           0.0       120.0
+5       105         600          25.0       625.0
+6       106         310          30.0       340.0
+```
+
+#### <font color='#c2410c'>Code Explanation</font>
+
+- **Line 1** `df['final_bill']` creates a new column by adding `item_total` and `delivery_fee` across each row.
+- **Line 2** Displays the original amounts alongside the newly computed final bill.
+
+> <font color='green'>**Result**</font> Every order now has an accurate total bill calculated directly from its cleaned components.
+
+### <font color='green'>Extending it: Renaming columns for clear reporting</font>
+
+> <font color='purple'>**How can we rename column headers to make our table easy for stakeholders to understand?**</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Ask learners why explicit column names like delivery_area are better than generic names like area.
+
+```python
+df = df.rename(columns={'area': 'delivery_area'})
+print(df.columns.tolist())
+```
+
+**Output**
+
+```
+['order_id', 'delivery_area', 'items', 'item_total', 'delivery_fee', 'final_bill']
+```
+
+> <font color='green'>**Result**</font> The column name is updated from area to delivery_area, clarifying what the data represents.
+
+> <font color='#b45309'>**Common mistake**</font> Passing a list instead of a dictionary to `df.rename()` will cause an error, because rename requires mapping old names to new names.
+
+### <font color='purple'>Quiz 4</font>
+
+**Question:** How does pandas calculate a new column when you write `df['total'] = df['price'] * df['qty']`?
+
+**Options:**
+- A) It multiplies the first row only and leaves the rest empty.
+- B) It multiplies corresponding values row by row across the entire DataFrame.
+- C) It calculates the sum of price multiplied by the average quantity.
+- D) It creates a separate spreadsheet file on your computer.
+
+**Correct Answer:** B
+
+**Explanation:**
+- **A)** Pandas performs vectorized arithmetic across all rows simultaneously, not just the first row.
+- **B)** Column operations apply row by row to matching index positions in the DataFrame.
+- **C)** Direct column multiplication multiplies individual row pairs, not aggregate sums or averages.
+- **D)** It creates a new column in memory inside the existing DataFrame rather than saving a new file.
+
+---
+
+## <font color='blue'>Closing: Outcome & Summary</font> `20 min`
+
+> <font color='purple'>**1. What happens if we summarize revenue without cleaning duplicate rows and messy area text first?**</font>
+
+If an analyst summarizes the raw table without cleaning, order 104 gets counted twice, and order 104's total bill evaluates to NaN because adding a number to a missing value results in NaN. Furthermore, Koramangala gets fragmented into two separate rows of ₹305 and ₹625, hiding its status as the highest-performing dark store.
+
+> <font color='purple'>**2. How does our cleaned DataFrame produce accurate total revenue across delivery areas?**</font>
+
+```python
+revenue_by_area = df.groupby('delivery_area')['final_bill'].sum()
+print(revenue_by_area)
+```
+
+**Output**
+
+```
+delivery_area
+Indiranagar    600.0
+Koramangala    930.0
+Whitefield     520.0
+Name: final_bill, dtype: float64
+```
+
+#### <font color='#c2410c'>Code Explanation</font>
+
+- **Line 1** Groups the cleaned records by `delivery_area` and sums `final_bill` to calculate total revenue per area.
+- **Line 2** Prints the revenue per hub, showing Koramangala generated ₹930.0, Indiranagar ₹600.0, and Whitefield ₹520.0.
+
+### <font color='green'>Outcome</font>
+
+| Metric | Dirty Raw Data | Cleaned Data |
+|:--|:-:|:-:|
+| Total Recorded Rows | 7 | 6 (duplicate removed) |
+| Koramangala Revenue | Split into ₹305 & ₹625 | Unified ₹930.0 |
+| Indiranagar Revenue | ₹720.0 (overcounted) | ₹600.0 (accurate) |
+| Missing Value Errors | ₹120 bill became NaN | ₹120.0 bill preserved |
+
+> <font color='green'>**Therefore,**</font> cleaning data before analysis protects business decisions from false alarms, double counting, and lost revenue records.
+
+> <font color="red">**🎯 Instructor Note**</font> Reveal poll answer: Adding a number to a missing value in pandas returns NaN. Filling missing values with zero was required to prevent order totals from disappearing.
+
+### <font color='green'>Summary</font>
+
+| Learning objective | Takeaway |
+|:--|:--|
+| Handle missing values and duplicates in pandas | Remove duplicate rows with `drop_duplicates()` and fill or drop missing cells with `fillna()` or `dropna()`. |
+| Clean data using pandas | Identify dirty entries and apply consistent cleanup steps across entire tables at once. |
+| Modify columns and values | Standardize text with `.str.strip()` and `.str.title()`, and enforce correct data types with `.astype()`. |
+| Perform simple transformations on datasets | Compute derived columns with row-by-row arithmetic and rename headers using `rename()`. |
+| **Practical value** | Delivers accurate reports that leadership can trust for inventory, staffing, and revenue decisions. |
+
+---
+
+# <font color='red'>Launch the Feedback Poll</font>
+
+> <font color="red">**🎯 Instructor Note**</font> Reminder: launch the feedback poll now to collect learner feedback.

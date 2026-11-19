@@ -37,6 +37,8 @@ def map_columns(header):
             if n in cols:
                 found[key] = cols[n]
                 break
+    if "topics" not in found and "objectives" in found:
+        found["topics"] = found["objectives"]
     return found
 
 
