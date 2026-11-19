@@ -16,6 +16,22 @@ why it matters, and leaves them with a question that the session answers.
 
 ---
 
+## Key Guardrails
+
+1. **Guardrail: Zero Jargon (High Accessibility)**
+   - Keep language simple, conversational, and direct (Grade 7 reading level).
+   - Never use ungrounded academic abstractions, buzzwords, or dense corporate jargon.
+   - Lead with intuition and an everyday analogy before defining any technical concept.
+   - Define the core term once in plain English upon first introduction.
+
+2. **Guardrail: Strict Curriculum Alignment (Prerequisite Hard-Boundary)**
+   - Cross-reference the batch curriculum CSV (`curriculum/<batch_id>.csv`).
+   - Only connect to topics, tools, or concepts that were covered in prior completed sessions.
+   - **Do NOT mention, assume, or preview topics that haven't been taught yet.**
+   - Zero forward references: never write "you will explore this in later modules" or use unearned future tools.
+
+---
+
 ## Inputs
 
 | Input | Rule |

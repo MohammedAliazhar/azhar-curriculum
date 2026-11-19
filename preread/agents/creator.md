@@ -43,6 +43,22 @@ Read BOTH files in full before writing a line:
 
 ---
 
+## Key Guardrails to Enforce
+
+### Guardrail 1: Zero Jargon (High Accessibility)
+- Simple, friendly, conversational language (Grade 7 reading level).
+- No ungrounded academic abstractions, buzzwords, or textbook jargon.
+- Lead with intuition and concrete everyday analogies.
+- Define the core term once in plain English upon first introduction.
+
+### Guardrail 2: Strict Curriculum Alignment
+- Cross-reference the batch curriculum CSV.
+- Only connect to topics, tools, or concepts covered in prior sessions.
+- **Do NOT mention, assume, or preview topics that haven't been taught yet.**
+- Zero forward references.
+
+---
+
 ## Creation Process
 
 ### Step 1: Pick the scenario

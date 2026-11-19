@@ -26,6 +26,8 @@ BANNED = [  # (label, regex, apply_to_code)
     ("Format: line", r"(?m)^\**Format:"),
     ("Step N (lecture part)", r"\bSteps? \d\b"),
     ("unfilled placeholder", r"\{\{\s*[A-Za-z_]"),
+    ("forward reference", r"(?i)\b(in\s+(the\s+)?(next|later|future|upcoming)\s+(lecture|session|module|week)s?|more\s+on\s+this\s+later)\b"),
+    ("forbidden jargon", r"(?i)\b(leverage|utilize|robust|seamlessly|empower|cutting-edge|dive\s+into|delve)\b"),
 ]
 ORDER = ["Agenda", "Scenario", "Problem Statement", "What We Will Use", "How:",
          "Topic 1:", "Topic 2:", "Topic 3:", "Topic 4:", "Closing: Outcome & Summary"]

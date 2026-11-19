@@ -17,6 +17,7 @@
 | "an Ola-style cab app", "a Flipkart-style shopping app" | Framing a real company. Add the Instructor Note that the data is invented |
 | "invented for teaching" | The only way to describe the data's origin |
 | Bridge in plain prose: "Last session you used GROUP BY" | Only for completed sessions listed in the curriculum CSV |
+| Plain English definition before technical label | Every time a technical term must be introduced |
 
 ## Do not use
 
@@ -34,7 +35,9 @@
 | Any emoji except 🎯 | none |
 | Per-topic "Why", "What", "How" headings | one Why, one What, one How per lecture |
 | "deep", "light", "breadth", "depth" labels | show it by minutes and variations |
-| Forward references ("more on that in Topic 4") | say it where it is taught |
+| Forward references ("more on that in Topic 4", "in future sessions") | say it where it is taught; zero forward references |
+| Unearned future concepts / libraries from later curriculum rows | strictly use only tools/concepts completed up to this session |
+| Dense academic jargon or buzzwords ("orthogonal", "idempotent", "canonical", "heuristic", "stochastic") without plain explanation | plain, intuitive English with real-world analogies |
 | A real company's name with a claim that it uses these numbers | the Instructor Note disclaimer |
 | Unfilled `{{ }}` placeholders | none |
 

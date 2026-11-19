@@ -98,13 +98,14 @@ Fix: if a snippet fails, fix it or remove it. Never leave untested code in the p
 
 Fix: remove a second scenario and rewrite its sentences in the main scenario. If the scenario is already used, report it and rewrite with an unused one.
 
-### Category 9: Language and Tone
-- [ ] Every sentence 20 words or fewer. Active voice. "You" used. No emojis
+### Category 9: Language, Tone & Key Guardrails
+- [ ] **Guardrail: Zero Jargon**: Grade 7 reading level. Active voice. "You" used. No emojis. Plain words with everyday intuition. No dense academic or textbook abstractions.
+- [ ] **Guardrail: Strict Curriculum Alignment**: Cross-reference batch curriculum CSV. No mention, assumption, or preview of topics that haven't been taught yet. Zero forward references.
 - [ ] Forbidden words absent: leverage, utilize, robust, seamlessly, empower, cutting-edge, dive into, delve, "learning objective", "LO"
 - [ ] No vague words from the guidelines list (various, several, many, some, just, very, good, and the rest)
-- [ ] About grade 7 reading level. Each key term bold once with its plain meaning right away
+- [ ] Each key term bold once with its plain meaning right away
 - [ ] The word "compute" is not used. Say "calculate"
-- [ ] No tool, library or concept outside the provided topics
+- [ ] No tool, library or concept outside the provided topics or prior completed sessions
 - [ ] Technical names only in the Topics callout and the one core-term definition
 - [ ] The Module Name does not appear anywhere
 - [ ] Body about 300 to 500 words

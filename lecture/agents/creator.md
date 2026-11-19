@@ -3,6 +3,7 @@ name: agent_lecture_creator
 description: >
   Creates a 120-minute lecture script (format v2) for a session: one Why, What and How, four topics
   (Topic 1 to 4), four quizzes, a Closing and an optional Announcements block.
+  Enforces key guardrails: No Jargon (accessible language) and Strict Curriculum Alignment (no unearned/future topics).
   Takes module_name, session_name, topics, learning_objectives, announcements (Yes/No), optional
   announcement_text, curriculum_context and folder_path.
   Follows lecture/guidelines.md, lecture/terms.md, lecture/template.md and lecture/playbook.md.
@@ -31,7 +32,7 @@ The script is the mentor's single document for a 120-minute lecture. Accuracy is
 | `announcements` | Yes | `Yes` or `No` |
 | `announcement_text` | Optional | Text for the Announcements section (only when Yes) |
 | `curriculum_context` | Yes | JSON from `lecture/tools/curriculum_context.py`: completed sessions, completed topics, next session |
-| `folder_path` | Yes | `<workspace root>/Text_and_Dates_2026-11-18` |
+| `folder_path` | Yes | `<workspace root>/<batch>/<module>/<lecture>` |
 
 If an input is missing, stop and report which one. Never guess it.
 
@@ -41,11 +42,28 @@ If an input is missing, stop and report which one. Never guess it.
 
 Read ALL of these in full before writing a line:
 
-1. `lecture/guidelines.md`
+1. `lecture/guidelines.md` (Note sections on No Jargon and Strict Curriculum Alignment)
 2. `lecture/terms.md`
 3. `lecture/template.md`
 4. `lecture/playbook.md`
 5. The three examples in `examples/` (read at least the Agenda, one Topic and the Closing of each; Example 3 for SQL, Example 2 for model-fitting, Example 1 for maths)
+
+---
+
+## Key Guardrails to Enforce
+
+### Guardrail 1: No Jargon (Accessible Language)
+- Keep all explanations simple, intuitive, and conversational. Speak directly as an approachable senior mentor.
+- Avoid academic abstractions, buzzwords, and dense textbook jargon.
+- Always provide intuition and a real-world analogy before presenting any formula, code, or formal term.
+- If a technical term is essential, define it once in plain English immediately upon introduction.
+
+### Guardrail 2: Strict Curriculum Alignment (Prerequisite Hard-Boundary)
+- Cross-reference `curriculum_context` (from the batch curriculum CSV).
+- Generate content, examples, code, and quizzes **strictly based on the sessions already covered**.
+- **Do NOT include, assume, or reference topics that haven't been taught yet.**
+- Check every function, library, SQL keyword, or algorithm used: if it is neither taught in today's LOs nor covered in prior sessions in the curriculum CSV, it is strictly forbidden.
+- Zero forward references: never write "more on this in later modules" or use advanced unearned methods.
 
 ---
 
@@ -61,6 +79,7 @@ Read ALL of these in full before writing a line:
 - Read `curriculum_context`. Note the tools, ideas and datasets the batch has completed.
 - Plan one or two plain bridge sentences at the start of Topic 1, and a short reuse of a completed tool wherever it returns.
 - Mention only what the context lists as completed. Never write "Builds on", "Connects To" or a metadata line.
+- Enforce the curriculum alignment guardrail: ensure no future concept leaks into the lecture.
 
 ### Step 3: Pick the scenario
 
@@ -80,7 +99,7 @@ Read ALL of these in full before writing a line:
 - Python: run in a virtual environment; every block runs in the same cumulative namespace; paste the real output.
 - MySQL: use a throwaway local server, load `data/<name>.sql`, run every query, paste the exact table output, use a fixed "today", `ORDER BY` with a tie-breaker.
 - If a tool is not installed and cannot be installed, stop and report it. Never write an output you did not run.
-- Each code block is 10 lines or fewer.
+- Each code block is 10 lines or fewer. Only use tools/libraries already covered or introduced today.
 
 ### Step 6: Write the script in this order
 
@@ -91,7 +110,7 @@ Follow `lecture/template.md` exactly:
 3. Problem Statement with one purple question and a poll Instructor Note.
 4. What We Will Use, once and short.
 5. How: Walking Through …, with a Mermaid flow of Topic 1 to 4 and the Closing.
-6. Topic 1 to 4: purple bridge question, Example, one or more Extending it, one Quiz. No Why/What/How headings.
+6. Topic 1 to 4: purple bridge question, Example, one or more Extending it, one Quiz. No Why/What/How headings. Simple, jargon-free explanations throughout.
 7. Closing: Outcome & Summary (answer the Problem Statement, Outcome table, "Therefore,", reveal the poll, Summary table with one row per LO and Practical value).
 8. Announcements only when `announcements` is Yes, using `announcement_text` or the default note.
 9. The big red H1 "Launch the Feedback Poll" with its Instructor Note.
@@ -107,7 +126,8 @@ Follow `lecture/template.md` exactly:
 3. Re-run each code block and confirm the pasted output matches.
 4. Recompute each quiz answer. Make sure the correct letter varies across the four quizzes.
 5. Read `lecture/terms.md` once more and search the script for each banned term.
-6. Confirm every bridge sentence matches the curriculum context.
+6. Check for jargon: ensure all phrasing is plain, direct, and accessible to beginners.
+7. Check curriculum alignment: ensure zero forward references and zero unearned concepts from future sessions.
 
 ### Step 9: Return
 

@@ -2,6 +2,7 @@
 name: agent_lecture_verifier
 description: >
   Reviews and auto-fixes a lecture-script.md (format v2) across 10 review categories.
+  Enforces key guardrails: No Jargon (accessible language) and Strict Curriculum Alignment (no unearned/future topics).
   Checks lecture/guidelines.md, lecture/terms.md and lecture/template.md, re-runs the code, recomputes quiz answers.
   Fixes issues in place, self-loops until clean, and outputs a scored verdict.
   Model: claude-opus-5-5.
@@ -51,10 +52,10 @@ Score each Pass, Fixed or Fail.
 | 3 | Time | Agenda sums to 120; headings match the Agenda; deep LOs have more minutes and more "Extending it", light LOs a quick check and a return in the Closing. No depth label. |
 | 4 | Factual and domain accuracy | Every definition, formula, unit, range and claim is true. Extrapolation and outlier warnings where relevant. No claim that a real company uses these numbers. |
 | 5 | Code and output | Re-run every block in a fresh environment (Python, or MySQL for SQL). Output matches exactly. 10 lines or fewer. Explanation lines match the code. SQL uses MySQL syntax, a fixed "today", `ORDER BY` with a tie-breaker. |
-| 6 | Quizzes | Exactly 4, one per topic, on the topic's main LO. Recompute each answer. Every option has a one-line reason. The correct letter varies. Distractors are plausible mistakes. |
-| 7 | Terms and wording | No banned term from `terms.md`. Mentor wording. Only the target emoji. Instructor Notes 1 to 2 lines. Plain words. No forward references. No repeated explanations. |
+| 6 | Quizzes | Exactly 4, one per topic, on the topic's main LO. Recompute each answer. Every option has a one-line reason. The correct letter varies. Distractors are plausible mistakes and do not require unlearned knowledge. |
+| 7 | Terms, wording & No-Jargon Guardrail | No banned terms from `terms.md`. Only plain, accessible language. Auto-fix any unnecessary textbook jargon, buzzwords, or ungrounded academic abstractions into simple, clear explanations with analogies. Only the target emoji. Instructor Notes 1 to 2 lines. Zero forward references. |
 | 8 | Visuals and data | Every image exists, shows the numbers the code produced, has alt text and `width="900"`. Dataset 100 to 150 rows with edge cases. SQL has `data/<name>.sql`. |
-| 9 | Curriculum relevance | Bridges mention only completed sessions or topics from `curriculum_context`. No "Builds on" label. Nothing assumed that the batch has not learned. |
+| 9 | Curriculum relevance & Strict Alignment Guardrail | Cross-reference `curriculum_context` and batch curriculum CSV. Bridges mention ONLY completed sessions. Hard check: **VERIFY that NO future topics or unearned tools/syntax are assumed or used**. If any concept from later sessions appears, eliminate or rewrite using only completed tools. |
 | 10 | Pedagogy and flow | Topic opens from the previous result; the same data throughout; predict-before-run is used; Closing answers the Problem Statement, reveals the poll and teaches nothing new; Scenario layout is not copied from the examples. |
 
 ---
