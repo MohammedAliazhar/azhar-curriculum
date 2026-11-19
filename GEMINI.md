@@ -51,9 +51,32 @@ Every time a pre-read or lecture script is created or edited, strictly enforce:
 
 ### Guardrail 3: Mandatory Real Data, Visuals, and Closing Structure
 * **Dataset (`data/`)**: Always include a 100-150 row CSV dataset in `data/` with realistic planned edge cases (duplicates, missing values, spaces, casing). Code starts with rows 1-10 and scales to all rows in Topic 4/Closing.
-* **Visuals (`images/`)**: Always generate 5-6 real PNG charts/diagrams (900px wide, dpi 200) in `images/` embedded with `<p align="center"><img src="images/XX_name.png" alt="..." width="900"></p>`.
+* **Visuals (`images/`)**: Always generate 5-6 real PNG charts/diagrams (900px wide, dpi 200) in `images/` embedded with `<p align="center"><img src="images/XX_name.png" alt="..." width="900"></p>`. When regenerating a diagram, use a new filename and update `img src` to avoid GitHub image caching.
 * **Closing Elements**: Must include Outcome comparison table (Before vs After), `Therefore,` deduction, Opening Poll reveal note, Summary table with `Practical value`, and `# <font color='red'>Launch the Feedback Poll</font>` with Reminder instructor note.
 * **Agenda Format**: Closing row must use `—` marker (`| — | Closing: Outcome & Summary | | MIN |`) with total summing to `**120**`. Only 🎯 emoji is allowed.
+
+### Guardrail 4: Runtime & Platform Rules (`Tools Used` Alignment)
+Check the `Tools Used` column in the curriculum CSV before drafting:
+* **Google Colab**:
+  * *Pre-read*: Mention notebook cells; refer to file paths as notebook filenames (not terminal commands).
+  * *Lecture script*: "What We Will Use" explicitly states Google Colab; include Instructor Note for uploading `data/` to Colab; treat each code block as a notebook cell; tracebacks must use `File "<cell>"` (never `<stdin>` or `script.py`).
+  * **Strict Ban**: Never write a file-I/O session as local terminal Python (`python script.py` or `<stdin>` tracebacks) when `Tools Used` is Google Colab.
+* **ChatGPT / Claude / Gemini**:
+  * *Pre-read*: Use "AI tool" in outcomes if session teaches prompt + test fix.
+  * *Lecture script*: Topic teaching debugging explicitly names the tools; paste prompt in prose; re-run the Colab cell before accepting.
+* **SQL / MySQL**:
+  * No live SQL in pre-read unless taught. Strictly follow SQL playbook when CSV specifies SQL runtime.
+
+---
+
+## 4. Curriculum CSV Column Mapping
+
+| CSV Column | Use in Content |
+|:---|:---|
+| **Session Title** | Folder name and verbatim lecture title |
+| **Topics / Topics Covered** | Pre-read "Topics you will meet"; mapped to four lecture topics |
+| **Learning Objectives / LO_Statement** | Verbatim LOs in lecture Agenda and Closing summary table |
+| **Tools Used** | Runtime and platform — determines notebook vs API environment |
 
 ---
 

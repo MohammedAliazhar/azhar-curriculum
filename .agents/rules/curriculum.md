@@ -19,3 +19,19 @@ Whenever working on curriculum materials, lecture scripts, or pre-reads in this 
 4. **Directory Structure**:
    - Maintain the strict hierarchy: `<batch-id>/module-NN-<topic>/lecture-NN-<topic>/`.
    - Only `pre-read.md` and `lecture-script.md` (plus optional `images/` and `data/` subfolders). No `.gitkeep` or stray scripts.
+
+5. **Runtime & Platform Rules (`Tools Used` Alignment)**:
+   - **Google Colab**:
+     - *Pre-read*: Mention notebook cells; refer to file paths as notebook filenames, not terminal commands.
+     - *Lecture script*: "What We Will Use" states Google Colab; Instructor Note for uploading `data/` to Colab; each code block is a code cell; tracebacks use `File "<cell>"` (never `<stdin>` or `script.py`).
+     - **Strict Ban**: Never write a file-I/O session as local terminal Python (`python script.py` or `<stdin>` tracebacks) when `Tools Used` is Google Colab.
+   - **ChatGPT / Claude / Gemini**:
+     - *Pre-read*: "AI tool" in outcomes if session teaches prompt + test fix.
+     - *Lecture script*: Topic teaching debugging names the tools; paste prompt in prose; re-run the Colab cell before accepting.
+   - **SQL / MySQL**:
+     - No live SQL in pre-read unless taught; follow SQL playbook when CSV specifies SQL runtime.
+
+6. **Pre-Push Checklist**:
+   - Run `check_script.py` to confirm 0 fail, 0 warn.
+   - Regenerated PNGs: Always use a new filename and update image tags to prevent GitHub image caching.
+   - Push only files under `<batch-id>/`.
